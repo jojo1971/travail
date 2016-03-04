@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>test</title>
+    </head>
+    <body>
+    <div id="menu">
+        <div class="item">
+            <span>element 1</span>
+            <span>element 2</span>
+        </div>
+        <div class="pub">
+            <span>element 3</span>
+            <span>element 4</span>
+        </div>
+
+    </div>
+    <div id="fin">
+        <span>c'est la fin</span>
+    </div>
+
+    <script>
+        var query = document.querySelector('#menu .item span');
+        var queryall = document.querySelectorAll('#menu .item span');
+        alert(query.innerHTML);
+        alert((queryall.length));
+        alert(queryall[0].innerHTML+' - '+queryall[1].innerHTML);
+
+    </script>
+
+    </body>
+</html>

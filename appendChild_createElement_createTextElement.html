@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>test</title>
+
+</head>
+<body>
+<div id="output">
+   <p id="montext">Voici du texte <a id="monlien">et un petit lien </a><strong> et puis le reste.</strong></p>
+</div>
+
+
+<script>
+    var newLink = document.createElement('a');
+    var newTextLink = document.createTextNode("j'ajoute du texte !");
+
+    newLink.id = 'lien';
+    newLink.href = 'http://www.google';
+    newLink.title = 'mon lien';
+    newLink.setAttribute('tabinsert','10');
+
+    newLink.appendChild(newTextLink);
+    document.getElementById('montext').appendChild(newLink);
+
+
+</script>
+
+</body>
+</html>

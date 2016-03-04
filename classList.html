@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>test</title>
+
+    </head>
+    <body>
+    <div>
+  <a id="myLink" class="test1 test2 test3 " href="lien.com">plusieures classes</a>
+        </div>
+    <script>
+    var div = document.querySelector('div');
+
+// Ajoute une nouvelle classe
+div.classList.add('new-class');
+
+// Retire une classe
+div.classList.remove('new-class');
+
+// Retire une classe si elle est présente ou bien l'ajoute si elle est absente
+div.classList.toggle('toggled-class');
+
+// Indique si une classe est présente ou non
+if (div.classList.contains('old-class')) {
+    alert('La classe .old-class est présente !');
+}
+
+// Parcourt et affiche les classes CSS
+var result = '';
+
+for (var i = 0; i < div.classList.length; i++) {
+    result += '.' + div.classList[i] + '\n';
+}
+
+alert(result);
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>test</title>
+
+</head>
+<body>
+<div id="output">
+   <p id="montext">Voici du texte <a id="monlien">et un petit lien
+   </a><strong> et puis le reste.</strong></p>
+</div>
+
+
+<script>
+function insertAfter(newElement, afterElement){
+    var parent = afterElement.parentNode;
+    if(parent.lastChild === afterElement){
+        parent.appendChild(newElement);
+    }else{
+        parent.insertBefore(newElement, afterElement.nextSibling);
+    }
+}
+    var a = document.querySelector('a');
+    var b = document.createElement('b');
+    var bText = document.createTextNode('super texte !');
+b.appendChild(bText);
+    insertAfter(b,a);
+
+
+
+</script>
+
+</body>
+</html>

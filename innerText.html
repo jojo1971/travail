@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>test</title>
+
+</head>
+<body>
+<div id="myDiv">
+    <p>un peu de texte <a>et un lien</a></p>
+</div>
+<script>
+    var div = document.getElementById('myDiv');
+    var text = '';
+    if(div.textContent){
+        text = div.textContent;
+    }else if(div.innerText){
+        text = div.innerText + '[via internet explorer]';
+    }else{
+        text = '';
+    }
+
+    alert(text);
+</script>
+
+</body>
+</html>

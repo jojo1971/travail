@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>test</title>
+
+</head>
+<body>
+<div id="output">
+   <p id="montext">Voici du texte <a id="monlien">et un petit lien </a><strong> et puis le reste.</strong></p>
+</div>
+
+
+<script>
+ var link = document.querySelector('a');
+ var text = document.createTextNode('nouveau texte');
+
+ link.replaceChild(text,link.firstChild);
+
+ link.parentNode.removeChild(link);
+ 
+
+
+
+
+
+</script>
+
+</body>
+</html>
