@@ -2,15 +2,31 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>TP</title>
+    <title>TP1</title>
 </head>
 <body>
 <script>
+    alert('fofo');
     var div = document.createElement('div');
     div.id = 'divTP2';
-    var text = document.createTextNode('Langage basé sur EMAScript');
-   div.appendChild(text);
-    document.body.appendChild('div');
+    var p = document.getElementById('divTP2').createElement('p');
+
+    var text = document.createTextNode('Langage basé sur ECMAScript');
+    p.appendChild(text);
+    div.appendChild(p);
+    /*
+
+     p.appendChild(text);
+     div.appendChild(p);
+     var li1 = getElementById('divTP2').createElement('li');
+     var li2 = getElementById('divTP2').createElement('li');
+     var li3 = getElementById('divTP2').createElement('li');
+     var li4 = getElementById('divTP2').createElement('li');*/
+
+    document.body.appendChild(div);
+
+
+
+
 </script>
 </body>
-</html>

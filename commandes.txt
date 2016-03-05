@@ -1,0 +1,90 @@
+type
+rd
+cd
+cd.. (revient en arrière)
+dir
+set (var)____pour afficher var :%x%
+regedit
+reg /?
+print
+cls
+choice
+
+convert X: /fs:ntfs 
+___________
+html :
+div : margin,border, padding,bottom
+_______________
+javascript :
+manipulation du html :
+DOM = document object model.
+getElementById()
+getElementsByTagName()
+getElementsByName()
+querySelector()
+querySelectorAll()
+getAttribute()
+setAttribute()
+className(pour les classes CSS)
+split()
+classList.add()
+classList.remove()
+classList.contain()
+classList.toggle()
+innerHTML
+innerText
+innerContent
+parentNode
+nodeType
+nodeName
+firstChild
+lastChild
+firstElementChild(> à IE 9)
+lastElementChild(> à IE 9)
+nodeValue
+data
+childNode
+nextSibling
+previousSibling
+nextElementSibling (> à IE 9)
+previousElementSibling (> à IE 9)
+appendChild
+createElement
+createTextNode
+cloneNode
+replaceChild
+removeChild
+hasChildNodes()
+insertBefore
+
+
+
+
+
+
+_______
+credential : clé de connexion pour une api
+_________
+product pitch: target(cible),pain(souffrance),solution
+product/market fit:acquisition( new letters...),activation,revenu,rétention,referral
+built & scale
+____________________
+Pour git sur la console :
+git status
+git diff
+git add (pour les changements)
+git add* (pour tout ajouter)
+git commit -m"" (por créer un commit avec message)
+git branch nom_de la branche (pour créer un branche)
+git checkout nom_de_la_branche ( pour se placer dessus)
+git branch -a (organigramme des branches)
+git pull origin master (pour rapatrier les changement sur github.com)
+git push origin nom_de_la_branche (envoyer changements)
+git add index.html
+git commit -m""
+git commit --amend ""(pour changer le message)
+git br -d nom_de_la_branche (supprimer branche)
+git br -D nom_de_la_branche (forcer suppression)
+
+git branch gh-pages (créer une branch pour être hébergé par github)
+git push origin gh-pages (pour l'envoyer)
