@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f4f40f0e-7b07-431e-9f0a-54138a1b59a9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TP1.html" afterPath="$PROJECT_DIR$/TP1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="travail.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,37 +22,47 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="TP1.html" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/TP1.html">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.5381295" vertical-offset="0" max-vertical-offset="695">
-                    <caret line="22" column="60" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="travail" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="appendChild_createElement_createTextElement.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="appendChild_createElement_createTextElement.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appendChild_createElement_createTextElement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47360703" vertical-offset="0" max-vertical-offset="682">
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="595">
               <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TP1.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TP1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7093525" vertical-offset="0" max-vertical-offset="695">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hasChildNodes.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hasChildNodes.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="544">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="queryall.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/queryall.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="646">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -237,9 +248,25 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/queryall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="721">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hasChildNodes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="544">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/appendChild_createElement_createTextElement.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47360703" vertical-offset="0" max-vertical-offset="682">
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="595">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding />
         </state>
@@ -247,8 +274,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TP1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5381295" vertical-offset="0" max-vertical-offset="695">
-          <caret line="22" column="60" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.7093525" vertical-offset="0" max-vertical-offset="695">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>

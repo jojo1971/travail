@@ -6,24 +6,26 @@
 </head>
 <body>
 <script>
-    alert('fofo');
+
     var div = document.createElement('div');
     div.id = 'divTP2';
-    var p = document.getElementById('divTP2').createElement('p');
+
+    var p = document.createElement('p');
+
 
     var text = document.createTextNode('Langage basé sur ECMAScript');
     p.appendChild(text);
     div.appendChild(p);
-    /*
 
-     p.appendChild(text);
-     div.appendChild(p);
-     var li1 = getElementById('divTP2').createElement('li');
+   /*  var li1 = getElementById('divTP2').createElement('li');
      var li2 = getElementById('divTP2').createElement('li');
      var li3 = getElementById('divTP2').createElement('li');
      var li4 = getElementById('divTP2').createElement('li');*/
 
+
     document.body.appendChild(div);
+    var paraf = document.querySelector('div');
+    alert(paraf.hasChildNodes());
 
 
 
