@@ -9,23 +9,32 @@
 
     var div = document.createElement('div');
     div.id = 'divTP2';
-
     var p = document.createElement('p');
-
+    var ul1 = document.createElement('ul');
+    var li1 = document.createElement('li');
+    var li2 = document.createElement('li');
+    var li3 = document.createElement('li');
+    var li4 = document.createElement('li');
 
     var text = document.createTextNode('Langage basé sur ECMAScript');
+    var text2 = document.createTextNode('JavaScript');
+    var text3 = document.createTextNode('JScript');
+    var text4 = document.createTextNode('ActionScript');
+    var text5 = document.createTextNode('EX4');
+    li1.appendChild(text2);
+    li2.appendChild(text3);
+    li3.appendChild(text4);
+    li4.appendChild(text5);
     p.appendChild(text);
     div.appendChild(p);
-
-   /*  var li1 = getElementById('divTP2').createElement('li');
-     var li2 = getElementById('divTP2').createElement('li');
-     var li3 = getElementById('divTP2').createElement('li');
-     var li4 = getElementById('divTP2').createElement('li');*/
-
+    ul1.appendChild(li1);
+    ul1.appendChild(li2);
+    ul1.appendChild(li3);
+    ul1.appendChild(li4);
+    div.appendChild(ul1);
 
     document.body.appendChild(div);
-    var paraf = document.querySelector('div');
-    alert(paraf.hasChildNodes());
+
 
 
 
