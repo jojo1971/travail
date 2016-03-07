@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var div0 = document.createElement("div");
+    div0.id = "divTP4";
+
+    var form = document.createElement('form');
+    form.enctype = "multipart/form-data";
+    form.method = "post";
+    form.action = "upload.php";
+
+    var fieldset = document.createElement('fieldset');
+
+    var legend = document.createElement('legend');
+    var textLegend = document.createTextNode('Uploader une image');
+    legend.appendChild(textLegend);
+
+    var div = document.createElement('div');
+    div.style = "text-align : center";
+
+    var lab = document.createElement('label');
+    lab.for = "inputUpload";
+    var textLab = document.createTextNode("Image à uploader : ");
+    lab.appendChild(textLab);
+
+    var inp1 = document.createElement('input');
+    inp1.type = "file";
+    inp1.name = "inputUpload";
+    inp1.id = "inputUpload";
+
+    var inp2 = document.createElement('input');
+    inp2.type = "submit";
+    inp2.value = "Envoyer";
+    var br = document.createElement('br');
+
+
+
+    div.appendChild(lab);
+    div.appendChild(inp1);
+    div.appendChild(br);
+    div.appendChild(br.cloneNode(false));
+    div.appendChild(inp2);
+
+    fieldset.appendChild(legend);
+    fieldset.appendChild(div);
+
+    form.appendChild(fieldset);
+
+    div0.appendChild(form);
+    document.body.appendChild(div0);
+
+
+
+</script>
+</body>
+</html>

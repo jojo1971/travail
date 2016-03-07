@@ -6,14 +6,22 @@
 </head>
 <body>
     <script>
+
         var div = document.createElement('div');
         div.id = 'divTP3';
-        var p = div.createElement('p');
-        var dl = div.createElement('dl');
-        var dt1 = dl.createElement('dt');
-        var dt2 = dl.createElement('dt');
-        var dt3 = dl.createElement('dt');
-        var dt4 = dl.createElement('dt');
+        var p = document.createElement('p');
+
+        var dl = document.createElement('dl');
+        var dt1 = document.createElement('dt');
+        var dt2 = document.createElement('dt');
+        var dt3 = document.createElement('dt');
+        var dt4 = document.createElement('dt');
+
+        var dd1 = document.createElement('dd');
+        var dd2 = document.createElement('dd');
+        var dd3 = document.createElement('dd');
+        var dd4 = document.createElement('dd');
+
         var text = [
                 document.createTextNode('Langages basés sur ECMAScript :'),
                 document.createTextNode('JavaScript'),
@@ -26,6 +34,38 @@
                 document.createTextNode('EX4'),
                 document.createTextNode('ECMAScript for XML (E4X) est une extension XML au langage ECMAScript.')
         ];
+
+        p.appendChild(text[0]);
+        div.appendChild(p);
+
+        dt1.appendChild((text[1]));
+        dl.appendChild(dt1);
+
+        dd1.appendChild(text[2]);
+        dl.appendChild(dd1);
+
+        dt2.appendChild((text[3]));
+        dl.appendChild(dt2);
+
+        dd2.appendChild(text[4]);
+        dl.appendChild(dd2);
+
+        dt3.appendChild((text[5]));
+        dl.appendChild(dt3);
+
+        dd3.appendChild(text[6]);
+        dl.appendChild(dd3);
+
+        dt4.appendChild((text[7]));
+        dl.appendChild(dt4);
+
+        dd4.appendChild(text[8]);
+        dl.appendChild(dd4);
+
+
+        div.appendChild(dl);
+        document.body.appendChild(div);
+
 
     </script>
 </body>
