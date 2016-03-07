@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="output">
+    <ol id="zozor-books">
+    <li>Zozor à la ferme</li>
+    <li>Zozor à l'école</li>
+    <li>Zozor en vacances</li>
+    <li>Zozor en classes de neige</li>
+    <li>Zozor le syndicaliste</li>
+    <li>Zozor en grève</li>
+</ol>
+</div>
+<script>
+
+    var list = document.getElementById('zozor-books');
+    var li = document.createElement('li');
+    var li2 = document.createElement('li');
+    var li3 = document.createElement('li');
+
+    var textLi = document.createTextNode('Zozor à pôle emploi');
+    var textLi2 = document.createTextNode('Zozor fait fortune');
+    var textLi3 = document.createTextNode('test');
+
+    li.appendChild(textLi);
+    li2.appendChild(textLi2);
+    li3.appendChild(textLi3);
+    list.insertBefore(li, list.lastElementChild);
+    list.insertBefore(li2, list.lastChild);
+    list.insertBefore(li3, list.getElementsByTagName('li') [4]);
+
+</script>
+</body>
+</html>

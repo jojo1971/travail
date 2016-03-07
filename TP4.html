@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body style="background-color: blue">
+<table cellspacing="2px" cellpadding="2px" rules="all" style="border: solid 1px #000000;color:#ffffff; width:350px; margin-bottom:1em;padding-left: 10px;padding-right: 10px;background:brown">
+    <thead>
+        <tr>
+            <th scope="col">Navigateurs</th>
+            <th scope="col">Développeurs</th>
+            <th scope="col">Parts de marché</th>
+        </tr>
+    </thead>
+    <tbody id="bod">
+        <tr>
+            <th scope="row">Internet explorer</th>
+            <td>Microsoft</td>
+            <td>33.8%</td>
+        </tr>
+        <tr>
+            <th scope="row">Chrome</th>
+            <td>Google</td>
+            <td>24,4%</td>
+    </tr>
+        <tr>
+            <th scope="row">Safari</th>
+            <td>Apple</td>
+            <td>11,8%</td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    var tr = document.createElement('tr');
+    var fire = document.createElement('th');
+    var fireText = document.createTextNode('Firefox');
+    var moz = document.createElement('td');
+    var mozText = document.createTextNode('Mozilla');
+    var pourcent = document.createElement('td');
+    var pourcentText = document.createTextNode('27,8%');
+    fire.appendChild(fireText);
+    moz.appendChild(mozText);
+    pourcent.appendChild(pourcentText);
+
+    tr.appendChild(fire);
+    tr.appendChild(moz);
+    tr.appendChild(pourcent);
+
+    var tbody = document.getElementById('bod');
+
+    tbody.insertBefore(tr,tbody.getElementsByTagName('tr')[1]);
+
+    var span = get('mascot');
+var image = document.createElement('img');
+image.src="data/zozor-happy.png";
+image.alt="Photo de Zozor";
+
+span.replaceChild(image,span.firstChild);
+
+</script>
+</body>
+</html>
