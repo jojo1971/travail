@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="output">
+    Bonjour à tous, je suis Zozor et voici ma famille :<br>
+    <dl>
+        <dt>Zazette</dt>
+        <dd>Ma maman</dd>
+        <dt>Zozo</dt>
+        <dd>Mon papa</dd>
+        <dt>Zazie</dt>
+        <dd>Ma soeur</dd>
+        <dt>Zazou</dt>
+        <dd>Mon frère</dd>
+    </dl>
+    <p>Je vis dans une pâture 
+        ressemblant aux décors 
+        <a href="http://www.youtube.com/watch?v=IEexx5BR5eY">du clip Respire</a>
+        de <cite>Mickey 3D</cite>.
+    </p>
+
+<script>
+   /var div = document.getElementById('output');
+    var children = div.childNodes;
+
+   for (var i =0; i<children.length;i++) {
+       div.removeChild(div.firstChild);
+       i = i -1;
+   }
+   /*
+    //ou encore :
+    var div = document.getElementById('output'), child;
+    while(child = div.firstChild){
+        div.removeChild(child);*/
+    }
+</script>
+</body>
+</html>
