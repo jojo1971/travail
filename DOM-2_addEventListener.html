@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<span id="clic" >cliquer</span>
+
+<script>
+    var evenement = document.getElementById('clic');
+    //possibilité de créer de multiples évènements
+    evenement.addEventListener('click',function(){
+        alert('et de un');
+    });
+    evenement.addEventListener('click',function(){
+        alert('et de deux');
+    });
+</script>
+</body>
+</html>
