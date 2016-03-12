@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="test.css"/>
+
+</head>
+<body>
+<p>
+    <button id="bout" type="button">Cliquer ici</button>
+</p>
+<script>
+  var parent, bout, newest;
+    if(bout = document.getElementById('bout')){
+        bout.addEventListener('click', function () {
+            this.innerHTML = 'vous avez cliqué';
+        });
+
+    }
+ if(parent=bout.parentNode) {
+
+     newest = bout.cloneNode(true);
+     parent.replaceChild(newest, bout);
+ }
+
+
+</script>
+</body>
+</html>

@@ -7,15 +7,45 @@
 
 </head>
 <body>
-<p class="center">
-        <button type="button" id="clickme">Cliquez-moi... oopah</button>
-    </p>
-<script>
-   var output = document.getElementById('output');
-   var bout = output.getElementsByTagName('button'[0]);
-   var bout2 = bout.cloneNode(true);
+<div id="output">
+    <p>Quelques langages interprétés</p>
+      <ol id="ol" style="list-style: decimal">
+        <li id="li1">PHP</li>
+        <li>Ruby</li>
+        <li>Perl</li>
+        <li>Lua</li>
+        <li>VBScript</li>
+      </ol>
 
-    output.appendChild(bout2);
+</div>
+<script>
+    var query = document.querySelector('li');
+    var queryall = document.querySelectorAll('li');
+    var li, text;
+    //li = document.getElementsByTagName('li')[2];
+
+for(i=0;i<queryall.length;i++){
+    li = document.getElementsByTagName('li')[i];
+    li.addEventListener('click',function(){
+        text = prompt('changer le texte');}
+        li.innerHTML =text;
+};
+/* li = document.getElementsByTagName('li')[i];
+
+ li.addEventListener('click',function(){
+ text = prompt('changer le texte');
+ li.innerHTML =text;
+ });
+
+
+
+
+var li1 = document.getElementById('li1');
+    li1.addEventListener('click',function(){
+       var text = prompt('changer le texte');
+        li1.innerHTML =text;
+    });*/
+
 
 </script>
 </body>
