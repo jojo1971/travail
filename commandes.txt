@@ -56,7 +56,26 @@ replaceChild
 removeChild
 hasChildNodes()
 insertBefore
-
+cloneNode(false)  (pour cloner un élément et ne pas avoir à le recréer)
+click
+dblclick
+mouseover,down,out,up,move
+keydown,up,press
+focus
+blur
+change
+input
+select
+submit
+reset
+type
+target
+relatedTarget
+keyup_keypress_keydowm_keycode
+mousemove
+returnFalse
+preventDefault
+this
 
 
 
