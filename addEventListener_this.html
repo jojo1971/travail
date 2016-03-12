@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="test.css"/>
+
+</head>
+<body>
+<div id="output">
+   <p class="center">
+        <button id="bout" type="button">Cliquez-moi</button>
+    </p>
+</div>
+<script>
+   var output, button;
+    if(output = document.getElementById('output')){
+        if(button = output.getElementsByTagName('button')[0]){
+            button.addEventListener('click',function(){
+               this.innerHTML = 'Vous avez cliqué !';
+            },false);
+        }
+    }
+
+</script>
+</body>
+</html>

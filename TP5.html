@@ -7,41 +7,15 @@
 
 </head>
 <body>
-<p>
-    <input id="field"type="text"/>
-</p>
-
-<table>
-    <tr>
-        <td>keydown</td>
-        <td id="down">down</td>
-    </tr>
-    <tr>
-        <td>keypress</td>
-        <td id="press">down</td>
-    </tr>
-    <tr>
-        <td>keyup</td>
-        <td id="up">down</td>
-    </tr>
-</table>
+<p class="center">
+        <button type="button" id="clickme">Cliquez-moi... oopah</button>
+    </p>
 <script>
-    var field = document.getElementById('field'),
-        down = document.getElementById('down'),
-        press = document.getElementById('press'),
-        up = document.getElementById('up');
+   var output = document.getElementById('output');
+   var bout = output.getElementsByTagName('button'[0]);
+   var bout2 = bout.cloneNode(true);
 
-     document.addEventListener('keydown', function(e){
-        down.innerHTML = e.keyCode;
-    });
-     document.addEventListener('keypress', function(e){
-        press.innerHTML = e.keyCode;
-    });
-    document.addEventListener('keyup', function(e){
-        up.innerHTML = e.keyCode;
-    });
-    var un = document.getElementById('down');
-
+    output.appendChild(bout2);
 
 </script>
 </body>
