@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="test.css"/>
+
+</head>
+<body>
+<div id="output">
+    <p>Quelques langages interprétés</p>
+      <ol id="ol" style="list-style: decimal">
+        <li>PHP</li>
+        <li>Ruby</li>
+        <li>Perl</li>
+        <li>Lua</li>
+        <li>VBScript</li>
+      </ol>
+
+</div>
+<script>
+  var li = document.querySelectorAll('#output li');
+    for(i=0;i<li.length;i++){
+        li[i].onclick =function(){
+            if(text = prompt('entrer nouveau texte',this.innerHTML)){
+                this.innerHTML = text;
+            }
+        }
+    }
+</script>
+</body>
+</html>

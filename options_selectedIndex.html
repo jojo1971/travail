@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="test.css"/>
+
+</head>
+<body>
+<select id="list">
+    <option>faire un choix</option>
+    <option>choix1</option>
+    <option>choix2</option>
+</select>
+
+<script>
+  var list = document.getElementById('list');
+
+    list.addEventListener('change',function(){//quand le focus change
+        alert(list.options[list.selectedIndex].innerHTML);
+    })
+</script>
+</body>
+</html>

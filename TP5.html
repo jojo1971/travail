@@ -8,44 +8,37 @@
 </head>
 <body>
 <div id="output">
-    <p>Quelques langages interprétés</p>
-      <ol id="ol" style="list-style: decimal">
-        <li id="li1">PHP</li>
-        <li>Ruby</li>
-        <li>Perl</li>
-        <li>Lua</li>
-        <li>VBScript</li>
-      </ol>
-
+   <p style="font: bold">
+       E-Mail : <input id="email-1" style=""/>
+   </p>
+    <p style="font: bold">
+       Confirmer : <input id="email-2"/>
+   </p>
 </div>
 <script>
-    var query = document.querySelector('li');
-    var queryall = document.querySelectorAll('li');
-    var li, text;
-    //li = document.getElementsByTagName('li')[2];
+        var email = document.getElementById('email-1'),
+            confirm = document.getElementById('email-2'),
+                text1, text2;
 
-for(i=0;i<queryall.length;i++){
-    li = document.getElementsByTagName('li')[i];
-    li.addEventListener('click',function(){
-        text = prompt('changer le texte');}
-        li.innerHTML =text;
-};
-/* li = document.getElementsByTagName('li')[i];
+    email.addEventListener('click', function(){
 
- li.addEventListener('click',function(){
- text = prompt('changer le texte');
- li.innerHTML =text;
- });
+       email.setAttribute('style','background:#DFF0D8');
+    });
+        text1 = email.value;
+        text2 = confirm.value;
 
 
+        for(i=0;i<text1.length;i++){
+            alert(text1[i]);
+              confirm.addEventListener('keypress', function(){
 
-
-var li1 = document.getElementById('li1');
-    li1.addEventListener('click',function(){
-       var text = prompt('changer le texte');
-        li1.innerHTML =text;
-    });*/
-
+                 // alert(text2[i]);
+                  alert(text1[i]);
+            /*if(text2[i] != text1[i]){
+                alert('hola');
+            }*/
+        });
+        }
 
 </script>
 </body>

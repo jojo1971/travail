@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="test.css"/>
+
+</head>
+<body>
+<label><input name="ch" type="radio"value="bouton n°1"/>bouton n°1</label><br/>
+<label><input name="ch" type="radio"value="bouton n°2"/>bouton n°2</label><br/>
+<label><input name="ch" type="radio"value="bouton n°3"/>bouton n°3</label><br/>
+<label><input name="ch" type="radio"value="bouton n°4"/>bouton n°4</label><br/><br/>
+
+<script>
+   var checked = document.querySelectorAll('input[type =radio]:checked');
+    for(i=0;i<checked.length;i++){
+        if(checked){
+            alert(checked[i].value);
+        }
+    }
+</script>
+</body>
+</html>

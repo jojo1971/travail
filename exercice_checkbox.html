@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="test.css"/>
+
+</head>
+<body>
+<div id="output" style="">
+    <ol id="ol" style="list-style-type: decimal">
+        <li><input type="checkbox"/> A propos d'un tuto</li>
+        <li><input type="checkbox"/> merci</li>
+        <li><input type="checkbox"/> Ca marche</li>
+        <li><input type="checkbox"/> Correction sur le tuto Ada</li>
+        <li><input type="checkbox"/> tuto javascript</li>
+    </ol><br/>
+    <input type="button" id="bout1" value="Cocher tout"/>
+    <input type="button" id="bout2" value="Décocher tout"/>
+</div>
+<script>
+
+    var ol = document.getElementById('ol');
+    var bout1 = document.getElementById('bout1');
+    var bout2 = document.getElementById('bout2');
+    var li = ol.querySelectorAll('input');
+
+        bout1.addEventListener('click', function () {
+            for(i=0;i<li.length;i++) {
+                li[i].checked = true;
+            }
+});
+    bout2.addEventListener('click', function () {
+            for(i=0;i<li.length;i++) {
+                li[i].checked = false;
+            }
+});
+
+</script>
+</body>
+</html>
