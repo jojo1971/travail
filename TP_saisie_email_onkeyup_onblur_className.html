@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="test.css"/>
+
+</head>
+<body>
+<form >
+<div id="output">
+    <p id="result"></p>
+   <p style="font: bold">
+       E-Mail : <input id="email-1" placeholder="Entrer email"/>
+   </p>
+    <p style="font: bold">
+       Confirmer : <input id="email-2" placeholder="confirmer email"/>
+   </p>
+</div>
+    </form>
+<script>
+       var email_1 = document.getElementById('email-1');
+       var email_2 = document.getElementById('email-2');
+    if(email_1 && email_2){
+        email_1.onkeyup = email_2.onkeyup = email_1.onblur = email_2.onblur = function() {
+            var value_1 = email_1.value,
+                    value_2 = email_2.value;
+
+            if (value_1 && value_2) {
+                email_1.className = email_2.className = (value_1 === value_2) ? 'green' : 'red';
+            }
+        };
+    }
+</script>
+</body>
+</html>

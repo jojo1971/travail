@@ -14,6 +14,11 @@ convert X: /fs:ntfs
 ___________
 html :
 div : margin,border, padding,bottom
+input : placeholder
+tr : nouvelle ligne de tableau, idem pour : thead,tbody,tfoot.
+th : premiere ligne d'un tableau(en gras).
+td : cellule d'un tableau
+
 _______________
 javascript :
 manipulation du html :
@@ -76,6 +81,7 @@ mousemove
 returnFalse
 preventDefault
 this
+location.reload()   (rafraichir fenêtre)
 
 
 

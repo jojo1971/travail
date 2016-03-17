@@ -18,9 +18,18 @@
     background-color: blue;
     text-align: center;
 }
-td {
+table {
     border: solid;
     border-width :2px ;
+    width: 300px;
+
+}
+thead {
+    color: #000000;
+    background-color: #ffffff;
+}
+td{
+    padding: 5px;
 }
 div{
     position: absolute;
@@ -33,6 +42,11 @@ div{
     color: #ffffff;
 
 }
-#onfocus{
-    background-color: blue;
+
+.green{
+    background-color:#DFF0D8 ;
+
+}
+.red{
+    background-color: #F2DEDE ;
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Exemple de DOM Event</title>
+   <style type="text/css">
+     #t { border: 1px solid red }
+     #t1 { background-color: pink; }
+   </style>
+   <script type="text/javascript">
+   // fonction pour modifier le contenu de t2
+   function modifieTexte() {
+
+    alert(this[0].innerHTML);
+
+   }
+   // fonction pour ajouter un écouteur à t
+   function load() {
+     var el = document.getElementById("t");
+     el.addEventListener("click", modifieTexte, false);
+   }
+   </script>
+ </head>
+ <body onload="load();">
+ <table id="t">
+   <tr><td id="t1">un</td></tr>
+   <tr><td id="t2">deux</td></tr>
+ </table>
+ </body>
+ </html>
