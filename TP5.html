@@ -3,66 +3,36 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="test.css"/>
+
 
 </head>
 <body>
-<form >
-<div id="output">
-  <table id="table" rules="all">
-   <thead>
-   <tr>
-       <th rowspan="2">Fiche</th>
-       <th rowspan="2">Catégorie</th>
-   </tr>
-   </thead>
-      <tbody>
-      <tr>
-          <td id="1">Natural Selection 2</td>
-          <td id="2">Jeux Vidéo</td>
-      </tr>
-      <tr>
-          <td id="3">Team Fortress²</td>
-          <td id="4">Jeux video</td>
-      </tr>
-      <tr>
-          <td id="5">Dreamweaver</td>
-          <td id="6">Logiciel</td>
-      </tr>
-      </tbody>
-  </table>
-</div>
-    </form>
-<script>
-var output = document.getElementById('output'), td;
-if(output) {
-td = output.getElementsByTagName('td');
-    for (i = 0; i < td.length; i++) {
-
-        td[i].onclick =  function () {
-            if (this.getAttribute("data-state"))return;
-
-            var text = this.innerHTML;
-            var input = document.createElement('input');
-
-            input.value = text;
-            input.type = "text";
-
-            this.innerHTML = '';
-            this.appendChild(input);
-            this.setAttribute("data-state", "edit");
-
-            input.focus();
-
-            input.onblur = function(){
-                this.parentNode.removeAttribute("data-state");
-                this.parentNode.innerHTML = this.value;
-            }
-
-        }
-
-    }
+<style>
+   .draggableBox {
+    position: absolute;
+    width: 80px; height: 60px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 40px;
+    background-color: #222;
+    color: #CCC;
+    cursor: move;
 }
+</style>
+
+<div class="draggableBox">1</div>
+<div class="draggableBox" >2</div>
+<div id="d1" class="draggableBox">3</div>
+<script>
+  var class1 = document.getElementsByClassName('draggableBox'),
+          pos = getComputedStyle(class1[0]).position;
+  alert(pos);
+
+
+   class1.addEventListener('mousedown',function(){
+      // pos.position = "relative";
+     // alert(pos);
+   });
 
 </script>
 </body>

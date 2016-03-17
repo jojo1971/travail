@@ -1,29 +1,59 @@
 <!DOCTYPE html>
 <html>
- <head>
-   <title>Exemple de DOM Event</title>
-   <style type="text/css">
-     #t { border: 1px solid red }
-     #t1 { background-color: pink; }
-   </style>
-   <script type="text/javascript">
-   // fonction pour modifier le contenu de t2
-   function modifieTexte() {
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link rel="stylesheet" type="text/css" href="test.css">
+</head>
+<body>
+<div id="output">
+    <table rules="all">
+        <thead>
+       <tr>
+           <th>Fices</th>
+           <th>caté</th>
+       </tr>
+        </thead>
+        <tr>
+            <td>Nature</td>
+            <td>Nature2154</td>
+        </tr>
+        <tr>
+            <td>Na878</td>
+            <td>Naooooe2154</td>
+        </tr>
+        <tfoot>
+            <th>fdsofi</th>
+            <th>popopo</th>
+        </tfoot>
+    </table>
+</div>
+<script>
+    var output = document.getElementById('output');
 
-    alert(this[0].innerHTML);
+    if(output){
+        var td = output.getElementsByTagName('td');
+        for(i=0;i<td.length;i++){
+            td[i].onclick = function(){
+                if(this.getAttribute("data-state")) return;
+                var text = this.innerHTML;
+                var input = document.createElement('input');
+                input.type = "text";
+                input.value = text;
 
-   }
-   // fonction pour ajouter un écouteur à t
-   function load() {
-     var el = document.getElementById("t");
-     el.addEventListener("click", modifieTexte, false);
-   }
-   </script>
- </head>
- <body onload="load();">
- <table id="t">
-   <tr><td id="t1">un</td></tr>
-   <tr><td id="t2">deux</td></tr>
- </table>
- </body>
- </html>
+                this.innerHTML ='';
+                this.appendChild(input);
+                this.setAttribute("data-state", 'edit');
+
+                input.focus();
+                input.onblur = function(){
+                    input.parentNode.removeAttribute("data-state");
+                    input.parentNode.innerHTML = this.value;
+                }
+
+            }
+        }
+    }
+</script>
+</body>
+</html>

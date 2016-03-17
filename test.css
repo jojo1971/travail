@@ -27,9 +27,11 @@ table {
 thead {
     color: #000000;
     background-color: #ffffff;
+    font: bold;
 }
 td{
     padding: 5px;
+    text-align-all: center;
 }
 div{
     position: absolute;
