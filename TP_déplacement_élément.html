@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+
+</head>
+<body>
+<style>
+   .draggableBox {
+    position: absolute;
+    width: 80px; height: 60px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 40px;
+    background-color: #222;
+    color: #CCC;
+    cursor: move;
+}
+</style>
+
+<div class="draggableBox">1</div>
+<div class="draggableBox" >2</div>
+<div class="draggableBox">3</div>
+<script>
+    (function(){
+
+        var storage = {};
+
+        function init(){
+            var element = document.querySelectorAll('.draggableBox');
+
+            for(i=0;i<element.length;i++) {
+                element[i].addEventListener('mousedown', function (e) {
+                    var s = storage;
+
+                    s.target = e.target;
+                    s.offsetX = e.clientX - s.target.offsetLeft;
+                    s.offsetY = e.clientY - s.target.offsetTop;
+
+                });
+                element[i].addEventListener('mouseup', function () {
+                    storage = {};
+                });
+            }
+
+                document.addEventListener('mousemove', function(e){
+
+                    var target = storage.target;
+
+                    if(target){
+                     
+                        target.style.top = e.clientY - storage.offsetY+'px';
+                        target.style.left = e.clientX - storage.offsetX+'px';
+                    }
+                });
+
+        }
+        init();
+
+    })();
+</script>
+</body>
+</html>

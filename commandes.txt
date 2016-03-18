@@ -82,6 +82,8 @@ returnFalse
 preventDefault
 this
 location.reload()   (rafraichir fenêtre)
+getComputedStyle() ou currentStyle pour IE < 9.
+offsetWidth/Height/Left/Top/Parent
 
 
 
