@@ -7,59 +7,44 @@
 
 </head>
 <body>
-<style>
-   .draggableBox {
-    position: absolute;
-    width: 80px; height: 60px;
-    padding-top: 10px;
-    text-align: center;
-    font-size: 40px;
-    background-color: #222;
-    color: #CCC;
-    cursor: move;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select : none;
-}
-
-
-</style>
-
-<div class="draggableBox">1</div>
-<div class="draggableBox" >2</div>
-<div class="draggableBox">3</div>
+<div id="sexe">
+    <p>Sélectionner votre sexe : </p>
+    <input id="rad1" type="radio" name="sexe" value="Masculin"/>
+    <label for="rad1">Masculin</label><br/>
+    <input id="rad2" type="radio" name="sexe" value="Feminin"/>
+    <label for="rad2">Féminin</label>
+    <div id="nom">
+        <p>Entrez votre nom</p>
+        <p><input type="text" placeholder="nom"/></p>
+    </div>
+    <div id="prenom">
+         <p>Entrez votre prénom</p>
+        <p><input type="text" placeholder="prénom"/></p>
+         <input type="button" value="vérif" onclick="alert(glob.sex);"/>
+    </div>
+</div>
 <script>
-    (function(){
-        var storage = {};
+    ;
+    var divSexe = document.getElementById('sexe'),
+       sexe = divSexe.querySelectorAll('input'),repSexe, glob = {},
+            nom = document.getElementById('nom'),
+            prenom = document.getElementById('prenom');
 
-        function init(){
-            var element = document.querySelectorAll('.draggableBox');
+if(sexe) {
 
-            for(i=0 ; i < element.length ; i++){
-                element[i].addEventListener('mousedown', function(e){
+    for (i = 0; i < sexe.length; i++) {
+        sexe[i].checked = false;
+        sexe[i].addEventListener('click', function () {
 
-                    storage.target = e.target;
-                    storage.offsetX = e.clientX - storage.target.offsetLeft;
-                    storage.offsetY = e.clientY - storage.target.offsetTop;
-                });
-                element[i].addEventListener('mouseup', function(){
-                    storage = {};
-                });
+            if (this.checked = true) {
+                repSexe = this.value;
             }
-            document.addEventListener('mousemove', function(e){
-                var target = storage.target;
+           // alert(repSexe);
+            glob.sex = repSexe;
 
-                if(target){
-
-                    target.style.top = e.clientY - storage.offsetY + 'px';
-                    target.style.left = e.clientX - storage.offsetX + 'px';
-                }
-            })
-        }
-        init();
-
-    })();
+        });
+    }
+}
 </script>
 </body>
 </html>
