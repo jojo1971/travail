@@ -7,29 +7,118 @@
 
 </head>
 <body>
+
+<form  >
 <div id="sexe">
     <p>Sélectionner votre sexe : </p>
     <input id="rad1" type="radio" name="sexe" value="Masculin"/>
-    <label for="rad1">Masculin</label><br/>
+       <label for="rad1">Masculin</label><br/>
     <input id="rad2" type="radio" name="sexe" value="Feminin"/>
-    <label for="rad2">Féminin</label>
-    <div id="nom">
-        <p>Entrez votre nom</p>
-        <p><input type="text" placeholder="nom"/></p>
-    </div>
-    <div id="prenom">
-         <p>Entrez votre prénom</p>
-        <p><input type="text" placeholder="prénom"/></p>
-         <input type="button" value="vérif" onclick="alert(glob.sex);"/>
-    </div>
+       <label for="rad2">Féminin</label><br>
+    <input type="button" value="vérif" onclick="alert(glob.sex);"/>
 </div>
+    <div>
+<p>
+        <label for="nom">Entrez votre nom</label><br>
+        <input id="nom" type="text" />
+</p>
+    </div>
+    <div>
+        <label for="prenom">Entrez votre prénom</label>
+        <p><input id="prenom" type="text"/></p>
+    </div>
+    <div>
+        <label for="age">Entrez votre âge</label><br>
+        <input type="text" id="age" onblur="if(isNaN(this.value) || this.value <3
+        || this.value > 120){alert('Veuillez entrerun âge correct !');}" /> ans
+    </div>
+    <div>
+        <p>
+        <label for="pseudo">Entrez un pseudo</label><br>
+        <input type="text" id="pseudo" onblur="if( ! isNaN(this.value))
+        {alert('Veuillez entrer un pseudo d\'au moins deux lettres !');}" />
+        </p>
+    </div>
+    <div>
+        <p>
+        <label for="password"> Entrez un mot de passe</label><br>
+        <input type="password" id="password"/>
+        </p>
+        <p>
+        <label for="passwordConf"> Confirmez le mot de passe</label><br>
+        <input type="password" id="passwordConf"/>
+        </p>
+    </div>
+    <div>
+        <label for="pays">Choisir un pays</label>
+        <p>
+
+            <select id="pays">
+                <optgroup label="Europe">
+                    <option value="allemagne"></option>
+                    <option value="allemagne">Allemagne</option>
+                    <option value="albanie">Albanie</option>
+                    <option value="andorre">Andorre</option>
+                    <option value="autriche">Autriche</option>
+                    <option value="bielorussie">Biélorussie</option>
+                    <option value="belgique">Belgique</option>
+                    <option value="bosnieHerzegovine">Bosnie-Herzégovine</option>
+                    <option value="bulgarie">Bulgarie</option>
+                    <option value="croatie">Croatie</option>
+                    <option value="danemark">Danemark</option>
+                    <option value="espagne">Espagne</option>
+                    <option value="estonie">Estonie</option>
+                    <option value="finlande">Finlande</option>
+                    <option value="france">France</option>
+                    <option value="grece">Grèce</option>
+                    <option value="hongrie">Hongrie</option>
+                    <option value="irlande">Irlande</option>
+                    <option value="islande">Islande</option>
+                    <option value="italie">Italie</option>
+                    <option value="lettonie">Lettonie</option>
+                    <option value="liechtenstein">Liechtenstein</option>
+                    <option value="lituanie">Lituanie</option>
+                    <option value="luxembourg">Luxembourg</option>
+                    <option value="exRepubliqueYougoslaveDeMacedoine">Ex-République Yougoslave de Macédoine</option>
+                    <option value="malte">Malte</option>
+                    <option value="moldavie">Moldavie</option>
+                    <option value="monaco">Monaco</option>
+                    <option value="norvege">Norvège</option>
+                    <option value="paysBas">Pays-Bas</option>
+                    <option value="pologne">Pologne</option>
+                    <option value="portugal">Portugal</option>
+                    <option value="roumanie">Roumanie</option>
+                    <option value="royaumeUni">Royaume-Uni</option>
+                    <option value="russie">Russie</option>
+                    <option value="saintMarin">Saint-Marin</option>
+                    <option value="serbieEtMontenegro">Serbie-et-Monténégro</option>
+                    <option value="slovaquie">Slovaquie</option>
+                    <option value="slovenie">Slovénie</option>
+                    <option value="suede">Suède</option>
+                    <option value="suisse">Suisse</option>
+                    <option value="republiqueTcheque">République Tchèque</option>
+                    <option value="ukraine">Ukraine</option>
+                    <option value="vatican">Vatican</option>
+                </optgroup>
+
+            </select>
+        </p>
+    </div>
+
+</form>
+
+
+
 <script>
-    ;
+
     var divSexe = document.getElementById('sexe'),
-       sexe = divSexe.querySelectorAll('input'),repSexe, glob = {},
+       sexe = divSexe.querySelectorAll('input[type=radio]'),repSexe, glob = {},
             nom = document.getElementById('nom'),
             prenom = document.getElementById('prenom');
 
+nom.value = '';
+prenom.value = '';
+    prenom.focus();
 if(sexe) {
 
     for (i = 0; i < sexe.length; i++) {
@@ -45,6 +134,37 @@ if(sexe) {
         });
     }
 }
+nom.addEventListener('change',function(){
+
+
+    if(isNaN(this.value) && this.value.length > 2){
+    glob.nom = this.value;
+    alert(glob.nom);
+       alert(this.value.length);
+    }else{
+
+        alert('Veuillez entrer un nom avec au moins deux lettres');
+        this.value = '';
+
+
+    }
+});
+
+    prenom.addEventListener('change',function(){
+        if(isNaN(this.value) && this.value.length > 2){
+            glob.prenom = this.value;
+            alert(glob.prenom);
+            alert(this.value.length);
+        }else{
+
+            alert('Veuillez entrer un prénom avec au moins deux lettres');
+            this.value = '';
+
+
+        }
+});
+
+
 </script>
 </body>
 </html>
