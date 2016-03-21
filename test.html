@@ -1,59 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>test</title>
-    <link rel="stylesheet" type="text/css" href="test.css">
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<title>Demo HTML5 de formulaire complet</title>
+
+ 
 </head>
 <body>
-<div id="output">
-    <table rules="all">
-        <thead>
-       <tr>
-           <th>Fices</th>
-           <th>caté</th>
-       </tr>
-        </thead>
-        <tr>
-            <td>Nature</td>
-            <td>Nature2154</td>
-        </tr>
-        <tr>
-            <td>Na878</td>
-            <td>Naooooe2154</td>
-        </tr>
-        <tfoot>
-            <th>fdsofi</th>
-            <th>popopo</th>
-        </tfoot>
-    </table>
-</div>
-<script>
-    var output = document.getElementById('output');
 
-    if(output){
-        var td = output.getElementsByTagName('td');
-        for(i=0;i<td.length;i++){
-            td[i].onclick = function(){
-                if(this.getAttribute("data-state")) return;
-                var text = this.innerHTML;
-                var input = document.createElement('input');
-                input.type = "text";
-                input.value = text;
 
-                this.innerHTML ='';
-                this.appendChild(input);
-                this.setAttribute("data-state", 'edit');
-
-                input.focus();
-                input.onblur = function(){
-                    input.parentNode.removeAttribute("data-state");
-                    input.parentNode.innerHTML = this.value;
-                }
-
-            }
-        }
-    }
-</script>
+ 
+ <form>
+     <input type="email"/>
+     <input type="submit"/>
+ </form>
+ 
 </body>
 </html>

@@ -3,19 +3,19 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-
+    <link rel="stylesheet"type="text/css"href="test2.css">
 
 </head>
 <body>
 
-<form  >
+<form name="form" >
 <div id="sexe">
     <p>Sélectionner votre sexe : </p>
     <input id="rad1" type="radio" name="sexe" value="Masculin"/>
        <label for="rad1">Masculin</label><br/>
     <input id="rad2" type="radio" name="sexe" value="Feminin"/>
        <label for="rad2">Féminin</label><br>
-    <input type="button" value="vérif" onclick="alert(glob.sex);"/>
+
 </div>
     <div>
 <p>
@@ -25,12 +25,12 @@
     </div>
     <div>
         <label for="prenom">Entrez votre prénom</label>
-        <p><input id="prenom" type="text"/></p>
+        <p><input id="prenom" type="text"/>ggggg</p>
     </div>
     <div>
         <label for="age">Entrez votre âge</label><br>
-        <input type="text" id="age" onblur="if(isNaN(this.value) || this.value <3
-        || this.value > 120){alert('Veuillez entrerun âge correct !');}" /> ans
+        <input type="number" id="age" onblur="if( this.value < 5
+        || this.value > 140){alert('Veuillez entrerun âge correct !');}" /> ans
     </div>
     <div>
         <p>
@@ -55,7 +55,7 @@
 
             <select id="pays">
                 <optgroup label="Europe">
-                    <option value="allemagne"></option>
+                    <option value=""></option>
                     <option value="allemagne">Allemagne</option>
                     <option value="albanie">Albanie</option>
                     <option value="andorre">Andorre</option>
@@ -104,66 +104,98 @@
             </select>
         </p>
     </div>
+    <div>
+        <input type="submit" id="bout" value="Envoyer"/>
+    </div>
 
 </form>
 
-
+<p id="test"></p>
 
 <script>
 
     var divSexe = document.getElementById('sexe'),
        sexe = divSexe.querySelectorAll('input[type=radio]'),repSexe, glob = {},
             nom = document.getElementById('nom'),
-            prenom = document.getElementById('prenom');
+            prenom = document.getElementById('prenom'),
+            envoi = document.getElementById('bout'),
+            test = document.getElementById('test'),
+            password = document.getElementById('password'),
+            passwordConf = document.getElementById('passwordConf');
 
-nom.value = '';
-prenom.value = '';
-    prenom.focus();
-if(sexe) {
 
-    for (i = 0; i < sexe.length; i++) {
-        sexe[i].checked = false;
-        sexe[i].addEventListener('click', function () {
 
-            if (this.checked = true) {
-                repSexe = this.value;
-            }
-           // alert(repSexe);
-            glob.sex = repSexe;
 
-        });
-    }
-}
+
 nom.addEventListener('change',function(){
-
-
     if(isNaN(this.value) && this.value.length > 2){
-    glob.nom = this.value;
-    alert(glob.nom);
-       alert(this.value.length);
     }else{
-
         alert('Veuillez entrer un nom avec au moins deux lettres');
         this.value = '';
-
-
     }
 });
 
     prenom.addEventListener('change',function(){
         if(isNaN(this.value) && this.value.length > 2){
-            glob.prenom = this.value;
-            alert(glob.prenom);
-            alert(this.value.length);
         }else{
-
             alert('Veuillez entrer un prénom avec au moins deux lettres');
             this.value = '';
-
-
         }
 });
 
+    password.onkeyup = password.onblur = passwordConf.onkeyup = passwordConf.onblur = function(){
+        var value1 = password.value,
+                value2 = passwordConf.value;
+        if(value1 && value2){
+            password.className = passwordConf.className = (value1 == value2) ? "green":"red";
+        }
+
+    };
+
+
+bout.addEventListener('click', function () {
+
+    if(document.forms['form'].elements['sexe'].value != '') {
+        if(document.forms['form'].elements['nom'].value != ''){
+            if(document.forms['form'].elements['prenom'].value != ''){
+                if(document.forms['form'].elements['age'].value != ''){
+                    if(document.forms['form'].elements['pseudo'].value){
+                        if(document.forms['form'].elements['password'].value != ''){
+                            if(passwordConf.className = "green"){
+                                if(document.forms['form'].elements['pays'].value != ''){
+                                    alert('youpi tout est bon !')
+                                }else{
+                                    alert('Veuillez indiquer votre pays');
+                                }
+                            }else{
+                                alert('Les mots de passe ne correspondent pas');
+                            }
+                        }else{
+                            alert('Veuillez entrer un mot de passe')
+                        }
+                    }else{
+                        alert('Veuillez entrer un pseudo')
+                    }
+                }else{
+                    alert('Vous devez indiquer votre âge')
+                }
+            }else{
+                alert('Vous devez entrer un prénom')
+            }
+        }else{
+            alert('Vous devez entrer un nom')
+        }
+    }else{
+        alert('Vous devez indiquer votre sexe')
+    }
+
+   /* for(i=0;i<document.forms['form'].length;i++){
+ if(document.forms['form'].elements[i].type == "text" || document.forms['form'].elements[i].type == "password"){
+     alert(document.forms['form'].elements[i].value);
+ }
+    }*/
+
+});
 
 </script>
 </body>
