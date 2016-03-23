@@ -7,203 +7,135 @@
 </head>
 <body>
 <form id="myform">
-    <span class="form-col">Sexe</span>
-    <label><input type="radio" name="sex" value="H"/>Homme</label>
-    <label><input type="radio" name="sex" value="F"/>Femme</label>
-    <span class="toolTip">Veuillez sélectionner un sexe</span>
+    <span class="form-col">sexe :</span>
+    <label><input name="sex"type="radio" value="H"/>Homme</label>
+    <label><input name="sex"type="radio" value="F"/>Femme</label>
+    <span class="toolTip">Préciser sexe !</span>
     <br /><br />
 
     <label class="form-col" for="lastname">Nom :</label>
-    <input type="text" id="lastname" name="lastname">
-    <span class="toolTip">Votre nom doit faire au moins deux lettres</span>
+    <input type="text" id="lastname"/>
+    <span class="toolTip">Entrer un nom d'au moins 2 lettres</span>
     <br /><br />
 
     <label class="form-col" for="firstname">Prénom :</label>
-    <input type="text" id="firstname" name="firstname">
-    <span class="toolTip">Votre prénom doit faire au moins deux lettres</span>
-    <br /><br />
-
-    <label class="form-col" for="age">Age :</label>
-    <input type="text" id="age" name="age">
-    <span class="toolTip">Votre doit être compris entre 5 et 140 ans</span>
+    <input type="text" id="firstname"/>
+    <span class="toolTip">Entrer un prénom d'au moins 2 lettres</span>
     <br /><br />
 
     <label class="form-col" for="login">Pseudo :</label>
-    <input type="text" id="login" name="login">
-    <span class="toolTip">Votre pseudo doit contenir au moins 4 lettres</span>
+    <input type="text" id="login"/>
+    <span class="toolTip">Entrer un pseudo d'au moins 4 lettres</span>
     <br /><br />
 
-    <label class="form-col" for="mp1">Mot de passe:</label>
-    <input type="password" id="mp1" name="mp1">
-    <span class="toolTip">Votre mot de passe doit faire au moins 6 lettres</span>
+    <label class="form-col" for="pw1">Mot de passe :</label>
+    <input type="text" id="pw1"/>
+    <span class="toolTip">Entrer un mp d'au moins 6 lettres</span>
     <br /><br />
 
-    <label class="form-col" for="mp2">Mot de passe:</label>
-    <input type="password" id="mp2" name="mp2">
-    <span class="toolTip">Le mot de passe doit être identique au premier</span>
+    <label class="form-col" for="pw2">Confirmation mdp :</label>
+    <input type="text" id="pw2"/>
+    <span class="toolTip">Entrer un pseudo d'au moins 4 lettres</span>
     <br /><br />
 
     <label class="form-col" for="pays">Pays :</label>
-    <select id="pays" name="pays">
-        <option value="none">Choisir pays</option>
+    <select id="pays">
+        <option value="none">Choisir un pays</option>
         <option>France</option>
-        <option>Angleterre</option>
+        <option>Angletrre</option>
         <option>Amérique</option>
     </select>
     <span class="toolTip">Choisir un pays</span>
     <br /><br />
 
     <span class="form-col"></span>
-    <label><input type="checkbox"/>abonnement news letter</label>
-    <br /><br />
-    <span class="form-col"></span>
-    <label><input type="submit" value="Envoyer"/>  <input type="reset" value="Réinitialiser"/></label>
-
+    <input type="submit" value="Envoyer"/>  <input type="reset" value="réinitialiser"/>
 </form>
 <script>
+
     function deactivationToolTips(){
-          var toolTips = document.querySelectorAll('tooltip');
-        for(i=0;i<toolTips.length;i++){
+        var toolTips = document.querySelectorAll('.toolTip'),
+                        toolTipLength = toolTips.length;
+        for(var i=0;i<toolTipLength;i++){
             toolTips[i].style.display = 'none';
         }
     }
-    function getTootTip(elements){
-      while(elements == elements.nextSibling){
-          if(elements.className = 'toolTip'){
-              return elements;
-          }
-      }
+
+    function getToolTip(elements){
+        while(elements = elements.nextSibling){
+            if(elements.classname === 'toolTip'){
+                return elements;
+            }
+        }
         return false;
     }
 
-var check = {};
+    var check = {};
 
     check['sex'] = function(){
         var sex = document.getElementsByName('sex'),
-                toolTipStyle = getTootTip(sex[1].parentNode).style;
+                tootTipStyle = getToolTip(sex[1].parentNode).style;
         if(sex[0].checked || sex[1].checked){
-            toolTipStyle.display = 'none';
+
+            tootTipStyle.display = 'none';
             return true;
-        }else{
-            toolTipStyle.display = 'inline-block';
-            return false;
         }
+        sex.className = 'incorrect';
+        return false;
     };
 
-    check['age'] = function(){
-        var name = document.getElementById('age'),
-                toolTipStyle = getTootTip(age),
-                ageValue = parseInt(age.value);
-
-        if(ageValue >= 4 && ageValue <= 140){
-            toolTipStyle.display = 'none';
-            return true;
-        }else{
-            toolTipStyle.display = 'inline-block';
-            return false;
-        }
-    };
-
-
-
-    check['lastname'] = function(id){
+    check['lastname'] = function (id) {
         var name = document.getElementById(id),
-                toolTipStyle = getTootTip(name);
-
+                toolTipStyle = getToolTip(name);
         if(name.value.length >= 2){
+            name.className = 'correct';
             toolTipStyle.display = 'none';
             return true;
-        }else{
-            toolTipStyle.display = 'inline-block';
-            return false;
         }
+        name.className = 'incorrect';
+        return false;
     };
 
     check['firstname'] = check['lastname'];
 
-    check['login'] = function(){
+    check['login'] = function () {
         var login = document.getElementById('login'),
-                toolTipStyle = getTootTip(login);
-
+                toolTipStyle = getToolTip(login);
         if(login.value.length >= 4){
+            login.className = 'correct';
             toolTipStyle.display = 'none';
             return true;
-        }else{
-            toolTipStyle.display = 'inline-block';
-            return false;
         }
-    }
-
-    check['mp1'] = function(){
-        var mp1 = document.getElementById('mp1'),
-                toolTipStyle = getTootTip(mp1);
-
-        if(mp1.value.length >= 6){
-            toolTipStyle.display = 'none';
-            return true;
-        }else{
-            toolTipStyle.display = 'inline-block';
-            return false;
-        }
-    }
-
-    check['mp2'] = function(){
-        var mp1 = document.getElementById('mp1'),
-                mp2 = document.getElementById('mp2'),
-                toolTipStyle = getTootTip(mp2);
-
-        if(mp2.value.length >= 6 && mp2.value != ''){
-            toolTipStyle.display = 'none';
-            return true;
-        }else{
-            toolTipStyle.display = 'inline-block';
-            return false;
-        }
-    }
-
-    check['pays'] = function(){
-        var pays = document.getElementById('pays'),
-                  toolTipStyle = getTootTip(pays);
-
-        if(pays.options[pays.selectedIndex].value != 'none'){
-            toolTipStyle.display = 'none';
-            return true;
-        }else{
-            toolTipStyle.display = 'inline-block';
-            return false;
-        }
+        login.className = 'incorrect';
+        return false;
     };
 
-    (function(){
-        var inputs = document.getElementsByTagName('input[type=text]','input[type=password]');
-        for(i=0;i<inputs.length;i++){
-            inputs[i].addEventListener('keyup', function(e){
-               check[e.target.id](e.target.id);
-
-            });
+    check['age'] = function(){
+        var age = document.getElementById('age'),
+                ageValue = parseInt(age.value),
+                toolTipStyle = getToolTip(age);
+        if(age.value >=5 && age.value <= 140){
+            age.className = 'correct';
+            toolTipStyle.display = 'none';
+            return true;
         }
+        age.className = 'incorrect';
+        return false;
+    };
 
-        myFrom.addEventListener('submit',function(e){
-            var result = true;
-            for(i in check){
-                result = check[i](i) && result;
-            }
-                if(result){
-                    alert('formulaire bien rempli !');
-                }
+    check['pays'] = function () {
+        var pays = document.getElementById(id),
+                toolTipStyle = getToolTip(pays);
+        if(pays.value.length >= 2){
+            pays.className = 'correct';
+            toolTipStyle.display = 'none';
+            return true;
+        }
+        pays.className = 'incorrect';
+        return false;
+    };
 
-                    e.preventDefault();
 
-
-        });
-
-        myFrom.addEventListener('reset', function(){
-            for(i=0;i<inputs.length;i++){
-                inputs[i].className = '';
-            }
-           deactivationToolTips();
-        });
-    })();
     deactivationToolTips();
 </script>
 </body>
