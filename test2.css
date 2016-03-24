@@ -1,7 +1,53 @@
-.green{
-    background-color:#DFF0D8 ;
+body{
+    margin-top: 50px;
+}
+
+.form-col{
+    display: inline-block;
+    width: 200px;
+    min-height: 3px;
+    padding: 3px 0;
+    margin-right: 15px;
+    text-align: right;
+
 
 }
-.red{
-    background-color: #F2DEDE ;
+
+input{
+    border: 1px solid #ccc;
+    padding: 2px;
+    outline: none;
+    text-align: left;
+    border-radius: 3px;
 }
+input:focus{
+    border-color: rgba(40,200,13,0.75);
+    box-shadow:0 0 2px rgba(40,200,13,0.5);
+}
+.correct{
+    border-color: rgba(68,191,68,0.75);
+}
+.correct:focus{
+    border-color: rgba(68,191,68,0.75);
+    box-shadow:0 0 4px rgba(68,191,68,0.5);
+}
+
+.incorrect{
+    border-color: rgba(191,82,82,0.75);
+}
+.incorrect:focus{
+    border-color: rgba(191,82,82,0.75);
+    box-shadow: 0 0 2px rgba(191,82,82,0.5);
+}
+
+.toolTip{
+    background-color: #cccccc;
+    border: solid 1px;
+    border-radius: 3px;
+    margin-left: 20px;
+    padding-left: 4px;
+    padding-right: 4px;
+    display: inline-block;
+
+}
+

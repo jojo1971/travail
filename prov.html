@@ -2,19 +2,19 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="form.css">
+    <link rel="stylesheet" type="text/css" href="test2.css">
     <title>TP</title>
 </head>
 <body>
 <form id="myform">
     <span class="form-col">sexe :</span>
-    <label><input name="sex"type="radio" value="H"/>Homme</label>
-    <label><input name="sex"type="radio" value="F"/>Femme</label>
+    <label><input name="sex" type="radio" value="H"/>Homme</label>
+    <label><input name="sex" type="radio" value="F"/>Femme</label>
     <span class="toolTip">Préciser sexe !</span>
     <br /><br />
 
     <label class="form-col" for="lastname">Nom :</label>
-    <input type="text" id="lastname"/>
+    <input type="text" id="lastname" name="lastname"/>
     <span class="toolTip">Entrer un nom d'au moins 2 lettres</span>
     <br /><br />
 
@@ -23,18 +23,13 @@
     <span class="toolTip">Entrer un prénom d'au moins 2 lettres</span>
     <br /><br />
 
+    <label class="form-col" for="age">Age :</label>
+    <input id="age" name="age" type="text"/>
+    <span class="toolTip">Votre âge doit être compris netre 5 et 140 ans</span>
+    <br /><br />
+
     <label class="form-col" for="login">Pseudo :</label>
     <input type="text" id="login"/>
-    <span class="toolTip">Entrer un pseudo d'au moins 4 lettres</span>
-    <br /><br />
-
-    <label class="form-col" for="pw1">Mot de passe :</label>
-    <input type="text" id="pw1"/>
-    <span class="toolTip">Entrer un mp d'au moins 6 lettres</span>
-    <br /><br />
-
-    <label class="form-col" for="pw2">Confirmation mdp :</label>
-    <input type="text" id="pw2"/>
     <span class="toolTip">Entrer un pseudo d'au moins 4 lettres</span>
     <br /><br />
 
@@ -48,8 +43,21 @@
     <span class="toolTip">Choisir un pays</span>
     <br /><br />
 
+    <label class="form-col" for="pw1">Mot de passe :</label>
+    <input type="password" id="pw1"/>
+    <span class="toolTip">Entrer un mp d'au moins 6 lettres</span>
+    <br /><br />
+
+    <label class="form-col" for="pw2">Confirmation mdp :</label>
+    <input type="password" id="pw2"/>
+    <span class="toolTip">Entrer un pseudo d'au moins 4 lettres</span>
+    <br /><br />
     <span class="form-col"></span>
-    <input type="submit" value="Envoyer"/>  <input type="reset" value="réinitialiser"/>
+    <label><input type="checkbox"/>Ab news letter</label>
+    <br /><br />
+
+    <span class="form-col"></span>
+    <input id="submit" type="submit" value="Envoyer"/>  <input type="reset" value="réinitialiser"/>
 </form>
 <script>
 
@@ -63,7 +71,7 @@
 
     function getToolTip(elements){
         while(elements = elements.nextSibling){
-            if(elements.classname === 'toolTip'){
+            if(elements.className === 'toolTip'){
                 return elements;
             }
         }
@@ -79,64 +87,129 @@
 
             tootTipStyle.display = 'none';
             return true;
-        }
-        sex.className = 'incorrect';
-        return false;
+        }else{
+       tootTipStyle.display = 'inline-block';
+        return false;}
     };
 
     check['lastname'] = function (id) {
         var name = document.getElementById(id),
-                toolTipStyle = getToolTip(name);
+                toolTipStyle = getToolTip(name).style;
         if(name.value.length >= 2){
             name.className = 'correct';
             toolTipStyle.display = 'none';
             return true;
+        }else {
+            name.className = 'incorrect';
+            toolTipStyle.display = 'inline-block';
+            return false;
         }
-        name.className = 'incorrect';
-        return false;
     };
 
     check['firstname'] = check['lastname'];
 
+    check['age'] = function(){
+        var age = document.getElementById('age'),
+                ageValue = parseInt(age.value),
+                toolTipStyle = getToolTip(age).style;
+        if(! isNaN(age.value) && age.value >=5 && age.value <= 140){
+            age.className = 'correct';
+            toolTipStyle.display = 'none';
+            return true;
+        }else {
+            age.className = 'incorrect';
+            toolTipStyle.display = 'inline-block';
+            return false;
+        }
+    };
+
     check['login'] = function () {
         var login = document.getElementById('login'),
-                toolTipStyle = getToolTip(login);
+                toolTipStyle = getToolTip(login).style;
         if(login.value.length >= 4){
             login.className = 'correct';
             toolTipStyle.display = 'none';
             return true;
+        }else {
+            login.className = 'incorrect';
+            toolTipStyle.display = 'inline-block';
+            return false;
         }
-        login.className = 'incorrect';
-        return false;
     };
 
-    check['age'] = function(){
-        var age = document.getElementById('age'),
-                ageValue = parseInt(age.value),
-                toolTipStyle = getToolTip(age);
-        if(age.value >=5 && age.value <= 140){
-            age.className = 'correct';
+     check['pw1'] = function(){
+        var pw1 = document.getElementById('pw1'),
+                 toolTipStyle = getToolTip(pw1).style;
+        if(pw1.value.length >= 6){
+            pw1.className = 'correct';
             toolTipStyle.display = 'none';
             return true;
+        }else {
+            pw1.className = 'incorrect';
+            toolTipStyle.display = 'inline-block';
+            return false;
         }
-        age.className = 'incorrect';
-        return false;
     };
+
+     check['pw2'] = function(){
+        var pw2 = document.getElementById('pw2'),
+                pw1 = document.getElementById('pw1'),
+                toolTipStyle = getToolTip(pw2).style;
+        if(pw2.value == pw1.value && pw2.value != ''){
+            pw2.className = 'correct';
+            toolTipStyle.display = 'none';
+            return true;
+        }else {
+            pw2.className = 'incorrect';
+            toolTipStyle.display = 'inline-block';
+            return false;
+        }
+    };
+
 
     check['pays'] = function () {
-        var pays = document.getElementById(id),
-                toolTipStyle = getToolTip(pays);
-        if(pays.value.length >= 2){
-            pays.className = 'correct';
+        var pays = document.getElementById('pays'),
+                toolTipStyle = getToolTip(pays).style;
+        if(pays.options[pays.selectedIndex].value != 'none'){
+
             toolTipStyle.display = 'none';
             return true;
+        }else {
+            toolTipStyle.display = 'inline-block';
+            return false;
         }
-        pays.className = 'incorrect';
-        return false;
     };
 
 
-    deactivationToolTips();
+    (function () {
+        var myform = document.getElementById("myform"),
+                inputs = document.querySelectorAll('input[type=text],input[type=password]'),
+                inputsLength = inputs.length;
+        for(var i =0;i<inputsLength;i++){
+            inputs[i].addEventListener('keyup',function(e){
+                check[e.target.id](e.target.id);
+            });
+        }
+
+        myform.addEventListener('submit', function(e){
+           var result = true;
+            for(var i in check){
+                result = check[i](i) && result;}
+                if(result){
+                    alert('Le formulaire a bien été rempli');
+                }
+
+                e.preventDefault();
+
+        });
+
+        myform.addEventListener('reset', function(){
+           for(var i =0;i<inputsLength;i++){
+            inputs[i].className = '';}
+            deactivationToolTips();
+        });
+    })();
+deactivationToolTips();
 </script>
 </body>
 </html>
