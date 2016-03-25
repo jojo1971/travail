@@ -14,11 +14,6 @@ convert X: /fs:ntfs
 ___________
 html :
 div : margin,border, padding,bottom
-input : placeholder
-tr : nouvelle ligne de tableau, idem pour : thead,tbody,tfoot.
-th : premiere ligne d'un tableau(en gras).
-td : cellule d'un tableau
-
 _______________
 javascript :
 manipulation du html :
@@ -66,6 +61,7 @@ click
 dblclick
 mouseover,down,out,up,move
 keydown,up,press
+keycode
 focus
 blur
 change
@@ -81,9 +77,21 @@ mousemove
 returnFalse
 preventDefault
 this
-location.reload()   (rafraichir fenêtre)
-getComputedStyle() ou currentStyle pour IE < 9.
-offsetWidth/Height/Left/Top/Parent
+className
+new
+instanceof
+myArray[i].work   ->liste d'objet instanciés
+prototype    -> objet.prototype.méthode
+event
+charAt
+charCodeAt()
+fromCharCode()
+String
+trim()  =>supprime les espaces
+indexOf()
+lastIndexOf()
+le tilde : ~
+
 
 
 
