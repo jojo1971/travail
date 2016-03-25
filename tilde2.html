@@ -11,14 +11,11 @@
 
 <script>
 
-    var myCSV = 'popo,dede,sasa';//CSV : comma separated values
-
-    var slitted = myCSV.split(',');
-    alert(slitted.length);
-
-
-
-
+    var machaine = 'le vélo de jojo est beau',
+            elt = machaine.indexOf('jojo');
+    if(~elt ) {//au lieu de elt > -1
+        alert('le mot jojo arrive en ' + elt + ' eme position');
+    }
 
 </script>
 
