@@ -10,9 +10,13 @@
 <body>
 
 <script>
-    var myNumber = 1/0; // 1 divisé par 0 tend vers l'infini
+    var sentence = 'Si ton tonton';
 
-    alert(isFinite(myNumber)); // Affiche « false », ce nombre tend vers l'infini
+    var result = sentence.search(/\bton\b/);
+
+    if (result > -1) { // On vérifie que quelque chose a été trouvé
+        alert('La position est ' + result); // 3
+    }
 </script>
 
 </body>

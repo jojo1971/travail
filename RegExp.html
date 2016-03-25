@@ -10,9 +10,11 @@
 <body>
 
 <script>
-    var myNumber = 1/0; // 1 divisé par 0 tend vers l'infini
 
-    alert(isFinite(myNumber)); // Affiche « false », ce nombre tend vers l'infini
+    var html = '<a href="www.mon-adresse.be"><strong class="web">Mon site</strong></a>';
+    /<a href="(.+?)">/.exec(html);
+
+    alert(RegExp.$1); // www.mon-adresse.be
 </script>
 
 </body>

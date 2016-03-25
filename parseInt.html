@@ -10,9 +10,10 @@
 <body>
 
 <script>
-    var myNumber = 1/0; // 1 divisé par 0 tend vers l'infini
+    var myString = '08';
 
-    alert(isFinite(myNumber)); // Affiche « false », ce nombre tend vers l'infini
+    alert(parseInt(myString)); // Affiche : 0
+    alert(parseInt(myString, 10)); // Affiche : 8
 </script>
 
 </body>

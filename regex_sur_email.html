@@ -10,9 +10,15 @@
 <body>
 
 <script>
-    var myNumber = 1/0; // 1 divisé par 0 tend vers l'infini
 
-    alert(isFinite(myNumber)); // Affiche « false », ce nombre tend vers l'infini
+    var mail = prompt('Entrer email :');
+
+    if(/^[a-z-._]+@[a-z.]+\.[a-z]{2,6}$/.test(mail)){
+        alert('L\'adresse est correcte');
+    }else{
+        alert('Adresse incorrecte');
+    }
+
 </script>
 
 </body>

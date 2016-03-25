@@ -10,9 +10,11 @@
 <body>
 
 <script>
-    var myNumber = 1/0; // 1 divisé par 0 tend vers l'infini
 
-    alert(isFinite(myNumber)); // Affiche « false », ce nombre tend vers l'infini
+var birth = 'Je suis né en mars';
+    /^Je suis né en (\S+)$/.exec(birth);
+    alert(RegExp.$1);
+
 </script>
 
 </body>

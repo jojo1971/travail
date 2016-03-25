@@ -10,9 +10,12 @@
 <body>
 
 <script>
-    var myNumber = 1/0; // 1 divisé par 0 tend vers l'infini
 
-    alert(isFinite(myNumber)); // Affiche « false », ce nombre tend vers l'infini
+  var email = prompt('entrer email :');
+    if(/^([a-z0-9._-]+)@([a-z0-9.-_]+)\.([a-z0-9-._]{2,6})$/.test(email)){
+        alert('parie locale : '+RegExp.$1+'\n domaine : '+RegExp.$2+'\n extention :'+RegExp.$3);
+    }
+
 </script>
 
 </body>

@@ -10,9 +10,11 @@
 <body>
 
 <script>
-    var myNumber = 1/0; // 1 divisé par 0 tend vers l'infini
+    var text = 'bla bla [b]un peu de texte[/b] bla [b]bla bla en gras[/b] bla bla';
 
-    alert(isFinite(myNumber)); // Affiche « false », ce nombre tend vers l'infini
+    text = text.replace(/\[b\]([\s\S]*?)\[\/b\]/g, '<strong>$1</strong>');
+
+    alert(text);
 </script>
 
 </body>

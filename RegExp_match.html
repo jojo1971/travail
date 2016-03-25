@@ -10,9 +10,11 @@
 <body>
 
 <script>
-    var myNumber = 1/0; // 1 divisé par 0 tend vers l'infini
+    var sentence = 'Si ton tonton tond ton tonton, ton tonton tondu sera tondu';
 
-    alert(isFinite(myNumber)); // Affiche « false », ce nombre tend vers l'infini
+    var result = sentence.match(/\btonton\b/g);
+
+    alert('Il y a ' + result.length + ' "tonton" :\n\n' + result);
 </script>
 
 </body>

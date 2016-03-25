@@ -10,9 +10,10 @@
 <body>
 
 <script>
-    var myNumber = 1/0; // 1 divisé par 0 tend vers l'infini
+    var family = 'Guillaume,Pauline;Clarisse:Arnaud;Benoît;Maxime';
+    var result = family.split(/[,:;]/);
 
-    alert(isFinite(myNumber)); // Affiche « false », ce nombre tend vers l'infini
+    alert(result);
 </script>
 
 </body>

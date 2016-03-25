@@ -1,7 +1,7 @@
 type
 rd
 cd
-cd.. (revient en arri�re)
+cd.. (revient en arri�re)
 dir
 set (var)____pour afficher var :%x%
 regedit
@@ -39,15 +39,15 @@ nodeType
 nodeName
 firstChild
 lastChild
-firstElementChild(> � IE 9)
-lastElementChild(> � IE 9)
+firstElementChild(> � IE 9)
+lastElementChild(> � IE 9)
 nodeValue
 data
 childNode
 nextSibling
 previousSibling
-nextElementSibling (> � IE 9)
-previousElementSibling (> � IE 9)
+nextElementSibling (> � IE 9)
+previousElementSibling (> � IE 9)
 appendChild
 createElement
 createTextNode
@@ -56,7 +56,7 @@ replaceChild
 removeChild
 hasChildNodes()
 insertBefore
-cloneNode(false)  (pour cloner un �l�ment et ne pas avoir � le recr�er)
+cloneNode(false)  (pour cloner un �l�ment et ne pas avoir � le recr�er)
 click
 dblclick
 mouseover,down,out,up,move
@@ -80,8 +80,8 @@ this
 className
 new
 instanceof
-myArray[i].work   ->liste d'objet instanci�s
-prototype    -> objet.prototype.m�thode
+myArray[i].work   ->liste d'objet instanci�s
+prototype    -> objet.prototype.m�thode
 event
 charAt
 charCodeAt()
@@ -91,6 +91,49 @@ trim()  =>supprime les espaces
 indexOf()
 lastIndexOf()
 le tilde : ~
+liste des métacaractères : ! ^ $ () [] {} ? + * . / \ |
+(regex : /contenu recherché/i => sans la casse.
+/contenu | un autre contenu/ => oubien.
+/^contenu/ => au début.
+/contenu$/ => à la fin.
+/gr[oa]s/ => recherche gras et gros.
+/gr[o-a]s/ => de a à o.
+la classe [a-z0-9] trouvera une lettre et un chiffre.
+[^aeiouy] => lettres ignorées idem pour l'interval [^b-y].
+/gr.s/ => n'importe quel caractère.
+le point (.)trouve les caractères et les espaces blancs hors retour à la ligne,
+nombre de fois qu'un caractère peut être rencontré avant :
+? => 0 ou 1 fois, + => 1 ou plusieurs fois, * => 0,1 ou plusieurs fois,
+{n} => n fois, {n,m} => de n à m fois, {n,} de n à l'infini,
+[a-s]{2,3} => lettres rencontrées entre a et b, 2 à 3 fois,
+\d => Trouve un caractère décimal (un chiffre)
+\D => Trouve un caractère qui n'est pas décimal (donc pas un chiffre)
+\s => Trouve un caractère blanc
+\S => Trouve un caractère qui n'est pas un caractère blanc
+\w => Trouve un caractère « de mot » : une lettre, accentuée ou non, ainsi que l'underscore
+\W => Trouve un caractère qui n'est pas un caractère « de mot »
+\n => Trouve un retour à la ligne
+\t => Trouve une tabulation
+\b => Trouve une limite de mot
+\B => Ne trouve pas de limite de mot,
+/\bcontenu\b/exec => renvoie la partie cherchée elle-même,
+RegEx.$1 => pour récupérer contenu d'une parenthèse capture,
+/(?:https|http|ftp|steam):\/\// => parenthèses non-capturantes,
+/contenu(.+?)/ => jusqu'à rencontrer une fois le caractère >",
+contenu.replace(/A/,'B') => remplacer un contenu,
+/contenu/g => recherche le contenu autant de fois qu'il apparaît,
+/contenu/.search(recherche) => retourne première occurence trouvée,
+/contenu/.search(recherche) => retourne toutes les occurences trouvée dans tableau.)
+Math.floor/ceil/round => arrondi.
+Math.PI => nbre PI
+Math.E => nbre d'Euler
+Math.pow(3,2) => 3²
+Math.sqrt(9) => racine carré = 3.
+Math.max/min.
+Math.random() => nombre aléatoire entre 0 et 1.
+Number.MAX_VALUE/MIN_VALUE/NaN.
+
+
 
 
 
@@ -98,10 +141,10 @@ le tilde : ~
 
 
 _______
-credential : cl� de connexion pour une api
+credential : cl� de connexion pour une api
 _________
 product pitch: target(cible),pain(souffrance),solution
-product/market fit:acquisition( new letters...),activation,revenu,r�tention,referral
+product/market fit:acquisition( new letters...),activation,revenu,r�tention,referral
 built & scale
 ____________________
 Pour git sur la console :
@@ -109,8 +152,8 @@ git status
 git diff
 git add (pour les changements)
 git add* (pour tout ajouter)
-git commit -m"" (por cr�er un commit avec message)
-git branch nom_de la branche (pour cr�er un branche)
+git commit -m"" (por cr�er un commit avec message)
+git branch nom_de la branche (pour cr�er un branche)
 git checkout nom_de_la_branche ( pour se placer dessus)
 git branch -a (organigramme des branches)
 git pull origin master (pour rapatrier les changement sur github.com)
@@ -121,5 +164,5 @@ git commit --amend ""(pour changer le message)
 git br -d nom_de_la_branche (supprimer branche)
 git br -D nom_de_la_branche (forcer suppression)
 
-git branch gh-pages (cr�er une branch pour �tre h�berg� par github)
+git branch gh-pages (cr�er une branch pour �tre h�berg� par github)
 git push origin gh-pages (pour l'envoyer)
