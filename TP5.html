@@ -10,9 +10,25 @@
 <body>
 
 <script>
-    var myNumber = 1/0; // 1 divisé par 0 tend vers l'infini
 
-    alert(isFinite(myNumber)); // Affiche « false », ce nombre tend vers l'infini
+    var myArray = [3, 1, 5, 10, 4, 2];
+
+
+    myArray.sort(function(a, b) {
+
+        if (a < b) {
+            alert(a+' ' +b);
+            return -1;
+        } else if (a > b) {
+            alert(a+'__ '+b);
+            return 1;
+        } else {
+            return 0;
+        }
+
+    });
+
+    alert(myArray); // Affiche : 1,2,3,4,5,10
 </script>
 
 </body>

@@ -136,9 +136,9 @@ setTimeout()
 setIneterval()
 clearInterval()
 clearTimeout()
-
-
-
+concat() => concaténer 2 tableux.
+myArray.forEach(function(value, index, array) { => pour parcourir un tableau.
+myArray.reverse() => inverse l'ordre des éléments d'un tableau.
 
 
 
