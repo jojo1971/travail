@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="test2.css">
+    <title>Tp formulaire</title>
+
+</head>
+<body>
+<button id="button">cliquer pour annuler</button>
+
+<script>
+   var button = document.getElementById('button');
+    var evt = setTimeout((function(){
+       alert('il faut être plus réactif !')
+    }),5000);
+    button.addEventListener('click',function () {
+        clearTimeout(evt);
+        alert('compte à rebours bien annuné')
+    })
+</script>
+
+</body>
+</html>

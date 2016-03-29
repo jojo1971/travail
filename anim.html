@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="test2.css">
+    <title>Tp formulaire</title>
+
+</head>
+<body>
+<img id="img" src="favicon.ico" height="100px" style="opacity: 1">
+
+<script>
+
+    var img = document.getElementById('img');
+
+    function anim(){
+        var s = img.style;
+
+      s.opacity =parseFloat(s.opacity) - 0.1;
+
+    if(s.opacity  > 0.2){
+        setTimeout(anim,80);
+    }
+   }
+    anim();
+</script>
+
+</body>
+</html>
