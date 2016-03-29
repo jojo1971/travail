@@ -81,7 +81,7 @@ className
 new
 instanceof
 myArray[i].work   ->liste d'objet instanci�s
-prototype    -> objet.prototype.m�thode
+prototype    -> objet.prototype.m�thode => pour créer des méthodes supplémentaires pour des objet natifs.
 event
 charAt
 charCodeAt()
@@ -140,6 +140,8 @@ sort => tri tableau
 shift unshift pop push =>les piles (FILO : first in last out), les files(FIFO)utilisée avec shift et unshift(à éviter).
 forEach => boucle sur tableau
 Image().
+load().
+polyfills => scripts pour la compatibilité des browsers.
 
 
 
