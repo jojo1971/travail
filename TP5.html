@@ -8,11 +8,38 @@
 
 </head>
 <body>
+<p>
 
-<script>
-    var myNumber = 1/0; // 1 divisé par 0 tend vers l'infini
+<a href="imgs/1.jpg" title="Afficher image"><img src="imgs/1_min.jpg" alt="Miniature"></a>
+<a href="imgs/2.jpg" title="Afficher image"><img src="imgs/2_min.jpg" alt="Miniature"></a>
+<a href="imgs/3.jpg" title="Afficher image"><img src="imgs/3_min.jpg" alt="Miniature"></a>
+<a href="imgs/4.jpg" title="Afficher image"><img src="imgs/4_min.jpg" alt="Miniature"></a>
+</p>
+ <div id="overlay"></div>
+    <script>
+var links = document.getElementsByTagName('a'),
+        linksLength = links.length;
+        for(var i = 0; i<linksLength;i++) {
+            links[i].addEventListener('click', function (e) {
+                e.preventDefault();
+                displayImg(e.currentTarget);
+            });
+        }
+            function displayImg(link){
+                var overlay = document.getElementById('overlay'),
+                        img = new Image();
+                img.addEventListener('load', function(){
+                    overlay.innerHTML = '';
+                    overlay.appendChild(img);
+                });
+                img.src = link.href ;
+                overlay.style.display ='block';
+                overlay.innerHTML = '<span>chargement image...</span>';
+            }
+        document.getElementById('overlay').addEventListener('click', function (e) {
+            e.currentTarget.style.display = 'none';
+        });
 
-    alert(isFinite(myNumber)); // Affiche « false », ce nombre tend vers l'infini
 </script>
 
 </body>

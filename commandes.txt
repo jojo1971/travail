@@ -88,8 +88,8 @@ charCodeAt()
 fromCharCode()
 String
 trim()  =>supprime les espaces
-indexOf()
-lastIndexOf()
+indexOf() (aussi pour un tableau)
+lastIndexOf() (aussi pour un tableau)
 le tilde : ~
 liste des métacaractères : ! ^ $ () [] {} ? + * . / \ |
 (regex : /contenu recherché/i => sans la casse.
@@ -136,6 +136,11 @@ setTimeout()
 setIneterval()
 clearInterval()
 clearTimeout()
+sort => tri tableau
+shift unshift pop push =>les piles (FILO : first in last out), les files(FIFO)utilisée avec shift et unshift(à éviter).
+forEach => boucle sur tableau
+Image().
+
 
 
 
