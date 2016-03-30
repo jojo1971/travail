@@ -10,36 +10,66 @@
 <body>
 <p>
 
-<a href="imgs/1.jpg" title="Afficher image"><img src="imgs/1_min.jpg" alt="Miniature"></a>
-<a href="imgs/2.jpg" title="Afficher image"><img src="imgs/2_min.jpg" alt="Miniature"></a>
-<a href="imgs/3.jpg" title="Afficher image"><img src="imgs/3_min.jpg" alt="Miniature"></a>
-<a href="imgs/4.jpg" title="Afficher image"><img src="imgs/4_min.jpg" alt="Miniature"></a>
-</p>
- <div id="overlay"></div>
-    <script>
-var links = document.getElementsByTagName('a');
+<script>
+    function Img(src) {
 
-        for(var i = 0;i<links.length;i++){
-            links[i].addEventListener('click', function (e) {
-                e.preventDefault();
-                displayImg(e.currentTarget);
-            });
-        }
-        function displayImg(link){
-            var overlay = document.getElementById('overlay'),
-                    img = new Image();
-            img.addEventListener('load',function(){
-                overlay.innerHTML = '';
-                overlay.appendChild(img);
-            });
-            img.src = link.href;
-            overlay.style.display = 'block';
-            overlay.innerHTML = '<span>Chargement en cours...</span>';
-        }
-        document.getElementById('overlay').addEventListener('click', function (e) {
-            e.currentTarget.style.display = 'none';
-        });
+        var obj = this; // Nous faisons une petite référence vers notre objet Img. Cela nous facilitera la tâche.
 
+        this.originalImg = new Image(); // On instancie l'objet original, le wrapper servira alors d'intermédiaire
+
+        this.complete = false;
+        this.onload = function() {}; // Voici l'événement que les développeurs pourront modifier
+
+        this.originalImg.onload = function() {
+
+            obj.complete = true; // L'image est chargée !
+            obj.onload(); // On exécute l'événement éventuellement spécifié par le développeur
+
+        };
+
+        if (src) {
+            this.originalImg.src = src; // Si elle est spécifiée, on défini alors la propriété src
+        }
+
+    }
+
+
+
+
+
+    Img.prototype.set = function(name, value) {
+
+        var allowed = ['width', 'height', 'src'], // On spécifie les propriétés dont on autorise la modification
+                wrapperProperties = ['complete', 'onload'];
+
+        if (allowed.indexOf(name) != -1) {
+            this.originalImg[name] = value; // Si la propriété est autorisée alors on la modifie
+        } else if (wrapperProperties.indexOf(name) != -1) {
+            this[name] = value; // Ici, la propriété appartient au wrapper et non pas à l'objet original
+        }
+
+    };
+
+    Img.prototype.get = function(name) {
+
+        // Si la propriété n'existe pas sur le wrapper, on essaye alors sur l'objet original :
+        return typeof this[name] != 'undefined' ? this[name] : this.originalImg[name];
+
+    };
+
+    var myImg = new Img(); // On crée notre objet Img
+
+    alert('complete : ' + myImg.get('complete')); // Vérification de la propriété complete : elle est bien à false
+
+    myImg.set('onload', function() { // Affichage de diverses informations une fois l'image chargée
+        alert(
+                'complete : ' + this.get('complete') + '\n' +
+                'width : ' + this.get('width') + ' px\n' +
+                'height : ' + this.get('height') + ' px'
+        );
+    });
+
+    myImg.set('src', 'imgs/1.jpg'); // On spécifie l'adresse de l'image
 </script>
 
 </body>
