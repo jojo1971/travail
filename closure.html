@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="test2.css">
+    <title>Tp formulaire</title>
+
+</head>
+<body>
+<div style="display: none">elt 1</div>
+<div style="display: none">elt 2</div>
+<div style="display: none">elt 3</div>
+<div style="display: none">elt 4</div>
+<div style="display: none">elt 5</div>
+<div style="display: none">elt 6</div>
+<div style="display: none">elt 7</div>
+<div style="display: none">elt 8</div>
+<div style="display: none">elt 9</div>
+<div style="display: none">elt 10</div>
+
+<script>
+   /* var divs = document.getElementsByTagName('div'),
+            divlen = divs.length;
+    for(var i = 0; i< divlen ; i++){
+        (function(){
+            var currentI = i;
+
+            setTimeout(function(){
+                divs[currentI].style.display = 'block';
+            }, 200*i);
+        })();
+    }*/
+     //ou encore
+
+    var divs = document.getElementsByTagName('div'),
+
+            divlen = divs.length;
+    for(var i = 0; i< divlen ; i++){
+        (function(i){  // sachant que i est isolé du i de la boucle par l'IIFE
+
+            setTimeout(function(){
+                divs[i].style.display = 'block';
+            }, 200*i);
+        })(i);
+    }
+
+</script>
+
+</body>
+</html>

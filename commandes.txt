@@ -142,7 +142,7 @@ forEach => boucle sur tableau
 Image().
 load().
 polyfills => scripts pour la compatibilité des browsers.
-
+les closures => méthode permettant d'isoler l'utilisation d'une variable sur une boucle en fonction du temps.
 
 
 
