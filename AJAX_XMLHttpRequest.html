@@ -28,6 +28,7 @@
 <p>
     <input type="button" value="file1.txt"/>
     <input type="button" value="file2.txt"/>
+    <input type="button" value="file.txt"/>
 </p>
 <p id="contentFile">
     <span>aucun texte choisi</span>
@@ -40,6 +41,8 @@ function loadFile(file){
     xhr.addEventListener('readystatechange', function(){
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200){
             document.getElementById('contentFile').innerHTML = '<span>'+ xhr.responseText +'</span>'
+        }else if(xhr.readyState === XMLHttpRequest.DONE && xhr.status != 200){
+            alert('une erreur est survenue ! \n\ncode : '+ xhr.status +'\nTexte ; '+ xhr.statusText);
         }
     });
     xhr.send(null);
