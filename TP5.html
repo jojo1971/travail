@@ -3,27 +3,76 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="test2.css">
     <title>Tp formulaire</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #fileContent{
+            margin-top: 100px;
+        }
+        #fileContent span{
+            padding: 3px 5px;
+            border-radius: 5px;
+            background-color: #DDD;
+            border: solid 1px #888;
+        }
+    </style>
 
 </head>
 <body>
-
+<p>
+    Charger le fichier de votre choix
+</p>
+<p>
+    <input type="button" value="file1.txt"/>
+    <input type="button" value="file2.txt"/>
+</p>
+<p  id="fileContent">
+    <span >
+        Aucun fichier choisi
+    </span>
+</p>
 <script>
-   var display = (function(){
-       var myvar = 0;
 
-       return function(value){
-           if(typeof value != 'undefined'){
-               myvar = value;
-           }
-           alert(myvar);
-       }
-   })();
+function loadFile(file) {
 
-    display();
-    display(45);
-    display();
+    var xhr = new XMLHttpRequest();
+
+    // On souhaite juste récupérer le contenu du fichier, la méthode GET suffit amplement :
+    xhr.open('GET', file);
+
+    xhr.addEventListener('readystatechange', function () { // On gère ici une requête asynchrone
+
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) { // Si le fichier est chargé sans erreur
+
+            document.getElementById('fileContent').innerHTML = '<span>' + xhr.responseText + '</span>'; // Et on affiche !
+
+        }
+
+    });
+
+    xhr.send(null); // La requête est prête, on envoie tout !
+
+
+}
+
+    (function() { // Comme d'habitude, une IIFE pour éviter les variables globales
+
+    var inputs = document.getElementsByTagName('input'),
+        inputsLen = inputs.length;
+
+    for (var i = 0; i < inputsLen; i++) {
+
+        inputs[i].addEventListener('click', function() {
+            loadFile(this.value); // À chaque clique, un fichier sera chargé dans la page
+        });
+
+    }
+
+})();
+
+
 </script>
 
 </body>

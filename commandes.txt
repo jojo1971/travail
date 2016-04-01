@@ -143,6 +143,53 @@ Image().
 load().
 polyfills => scripts pour la compatibilité des browsers.
 les closures => méthode permettant d'isoler l'utilisation d'une variable sur une boucle en fonction du temps.
+JSON => javascript object notation
+__________________________________
+AJAX :
+XHR = XMLHttpRequest.
+GET => envoi de requètes.
+POST => envoi des valeurs contenues dans un formulaire
+HEAD => envoi de requète pour avoir juste l'entête d'un fichier.
+encodeURIComponent(value) => évite d'écrire des caractères interdits.
+open() => préparation de la requète.
+abord()=> abandonne l'échange de données.
+send() => envoi de la requète.
+setRequestHeader() => ajout ou modif d'un en-tête
+readystatechange => pour une requète asynchrone, état de changement en 5 étapes : UNSENT(0), OPENED(1), HEADER_RECEIVED(2), LOADING(3), DONE(4).
+ex : if(xhr.readyState === 4 && xhr.status === 200){......  => status : tout à été mené à bien.
+statusText => statut de la requète en format texte.
+responseXML, responseText => propriétés pour le traitement des données reçues.
+getAllresponseHeaders() =>retourne tous les en-têtes en vrac.
+getResponseHeader() => retourne un seul en-tête.
+
+
+
+
+_________________________________
+XML :
+&lt; remplace < ;Pour information, lt signifie « lower than » (plus petit que, <) et gt signifie « greater than » (plus grand que, >).
+&gt; remplace > ;
+&apos; remplace ' ;
+&quot; remplace " ;
+&amp; remplace & ;
+prologue (optionnel) : <?xml version="1.0" encoding="iso-8859-1"?>.
+<![CDATA[ code ]]> => zone de texte contenant des signes(<>'"&), donc pas interprétée.
+<!--le commentaire se place ici-->.
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">  =>  espace de nom html,
+<math xmlns="http://www.w3.org/1998/Math/MathML"> => espace de nom math.
+XSLT/XPath => langage de la base XML pour le style de la mise en page du XML.
+XQuery : XML comme base de données => un peu comme SQL mais par Xpath.
+XRX =>couplage de langages : XQuery,Rest, XForm, Xml...
+DTD et XML Schéma=> schéma de validité d'un code, par ex : <ul> ne peut contenir que <il>.
+XHTML => présentation docu web.
+svg => dessin vectoriel en 2D.
+SMIL => animation déclarative.
+XForms => générationd e formulaire Web.
+WLink => pour les liens.
+XMPP => protocole de messagerie instantanée.
+
+
+
 
 
 

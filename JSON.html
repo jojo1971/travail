@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="test2.css">
+    <title>Tp formulaire</title>
+
+</head>
+<body>
+
+<script>
+var obj = {
+    index : 'contenu'
+},string;
+
+    string = JSON.stringify(obj); // transforme un objet en chaine de caractère
+    alert(string + ' : '+ string);
+
+    obj = JSON.parse(string);// transforme une chaine de caractère en objet
+    alert(obj + ' : '+ obj);
+</script>
+
+</body>
+</html>
