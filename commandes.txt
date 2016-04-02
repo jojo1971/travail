@@ -164,7 +164,9 @@ getResponseHeader() => retourne un seul en-tête.
 
 
 
-
+________________________________
+AJAX :
+XMLHttpRequest
 _________________________________
 XML :
 &lt; remplace < ;Pour information, lt signifie « lower than » (plus petit que, <) et gt signifie « greater than » (plus grand que, >).
@@ -201,6 +203,7 @@ XMPP => protocole de messagerie instantanée.
 
 _______
 credential : cl� de connexion pour une api
+MIME : Multipurpose internet mail extensions => standard pour définir un type de document
 _________
 product pitch: target(cible),pain(souffrance),solution
 product/market fit:acquisition( new letters...),activation,revenu,r�tention,referral
