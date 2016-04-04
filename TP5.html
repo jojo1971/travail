@@ -11,26 +11,17 @@
 
 
     <script>
-        function sendDSL() {
-
-            var scriptElement = document.createElement('script');
-
-            scriptElement.src = scriptElement.src = 'dsl_script.php?nick=' + prompt('Quel est votre pseudo ?');
-
-
-            document.body.appendChild(scriptElement);
-
+        function sendDSL(){
+            var script = document.createElement('script');
+            script.src = 'dsl_script.php?nick = '+prompt('entrer votre prénom');
+            document.body.appendChild(script);
         }
-
-
-        function receiveMessage(message) {
-
+        function receiveMessage(message){
             alert(message);
-
         }
     </script>
     <p>
-        <button type="button" onclick="sendDSL()">Executer le script</button>
+        <button type="button" onclick="sendDSL()">executer le script</button>
     </p>
   </body>
 </html>
