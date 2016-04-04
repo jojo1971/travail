@@ -145,9 +145,9 @@ polyfills => scripts pour la compatibilité des browsers.
 les closures => méthode permettant d'isoler l'utilisation d'une variable sur une boucle en fonction du temps.
 JSON => javascript object notation
 __________________________________
-AJAX :
+AJAX : (communication avec le serveur)
 XHR = XMLHttpRequest.
-GET => envoi de requètes.
+GET => envoi de requètes.(les paramètrees de l'URL doivent être encodés avec encodeURIComponent() car elles sont envoyées en UTF-8).
 POST => envoi des valeurs contenues dans un formulaire
 HEAD => envoi de requète pour avoir juste l'entête d'un fichier.
 encodeURIComponent(value) => évite d'écrire des caractères interdits.
@@ -161,6 +161,10 @@ statusText => statut de la requète en format texte.
 responseXML, responseText => propriétés pour le traitement des données reçues.
 getAllresponseHeaders() =>retourne tous les en-têtes en vrac.
 getResponseHeader() => retourne un seul en-tête.
+formData() avec la méthode append('champs','valeur') => envoi de données d'un formulaire sans avoir à soécifeir d'en-tête.
+iframe => technique pour réaliser un upload.
+callback, windows.top => accéder à la page qui contient l'iframe
+
 
 
 

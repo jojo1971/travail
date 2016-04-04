@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie IV - Chapitre 2 - Exemple 3</title>
+
+    <style>
+      #progression {
+        margin: 100px 0;
+        width: 300px; height: 30px;
+        border: 1px solid #222;
+      }
+
+      #progression div {
+        width: 0; height: 100%;
+        background-color: #AAA;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <p>
+      Cliquez pour effectuer le chargement d'un fichier de 1,5 Mo :
+      <br /><br />
+      <input id="loadButton" type="button" value="Commencer !">
+      <br /><br />
+      Si le prochain chargement se fait instantanément, pensez bien à vider le cache généré aujourd'hui par votre navigateur.
+    </p>
+
+    <div id="progression">
+      <div></div>
+    </div>
+
+    <script>
+      
+      // Utiliser l'XHR2 implique d'avoir un navigateur très récent, donc profitons-en pour se servir de querySelector() !
+      document.querySelector('#loadButton').onclick = function() {
+        
+          var progression = document.querySelector('#progression div').style,
+              xhr = new XMLHttpRequest();
+
+          progression.width = 0; // On vide la progression dans le cas où vous souhaiteriez faire plusieurs essais
+
+          xhr.open('GET', 'img.jpg');
+
+          xhr.onprogress = function(e) {
+          
+              progression.width = e.loaded * 100 / e.total + '%'; // Un simple calcul de pourcentage et c'est tout bon !
+
+          };
+
+          xhr.onload = function() { // Autant utiliser le nouvel événement non ?
+
+              progression.width = '100%';
+              alert('Chargement terminé !');
+
+          };
+
+          xhr.send(null);
+
+      };
+
+    </script>
+
+  </body>
+</html>

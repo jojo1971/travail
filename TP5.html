@@ -1,60 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <title>Tp formulaire</title>
-    <style>
-        body{
-            text-align: center;
-        }
-        #contentFile{
-            margin-top: 100px;
-        }
-        #contentFile span{
-            padding: 3px 5px;
-            border: solid 1px #888;
-            border-radius: 5px;
-            background-color: #ddd;
-            text-align: center;
-        }
-    </style>
+  <head>
+    <meta charset="utf-8" />
+    <title>TP</title>
 
-</head>
-<body>
+  </head>
+
+  <body>
+
+
+
+    <script>
+      
+     function sendDSL(){
+         var script = document.createElement('script');
+                 script.src = "dsl_script.php?nick = prompt('quel est votre prénom';)";
+         document.body.appendChild(script);
+     }
+        function receiveMessage(message){
+         alert(message);
+     }
+
+    </script>
 <p>
-    Choisir un texte à afficher
+    <button type="button" onclick="sendDSL()">Ececuter le script</button>
 </p>
-<p>
-    <input type="button" value="file1.txt"/>
-    <input type="button" value="file2.txt"/>
-</p>
-<p id="contentFile">
-    <span>aucun texte choisi</span>
-</p>
-
-<script>
-function loadFile(file){
-    var xhr = new XMLHttpRequest();
-    xhr.open('get', file);
-    xhr.addEventListener('readystatechange', function(){
-        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200){
-            document.getElementById('contentFile').innerHTML = '<span>'+ xhr.responseText +'</span>'
-        }
-    });
-    xhr.send(null);
-}
-
-(function(){
-    var inputs = document.getElementsByTagName('input');
-    for(var i =0;i<inputs.length;i++){
-        inputs[i].addEventListener('click', function(){
-            loadFile(this.value);
-        });
-    }
-})();
-
-</script>
-
-</body>
+  </body>
 </html>

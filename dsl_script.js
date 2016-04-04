@@ -1,0 +1,1 @@
+receiveMessage('voici le message envoyé par le serveur  !');
