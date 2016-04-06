@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>TP</title>
+
+  </head>
+
+  <body>
+
+
+
+    <script>
+        function sendDSL() {
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'dsl_script.php?nick=' + prompt('Quel est votre pseudo ?');
+
+        document.body.appendChild(scriptElement);
+    }
+
+    function receiveMessage(message) {
+        alert(message);
+    }
+    </script>
+    <p>
+        <button type="button" onclick="sendDSL();">executer le script</button>
+    </p>
+  </body>
+</html>

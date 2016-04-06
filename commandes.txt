@@ -164,6 +164,7 @@ getResponseHeader() => retourne un seul en-tête.
 formData() avec la méthode append('champs','valeur') => envoi de données d'un formulaire sans avoir à soécifeir d'en-tête.
 iframe => technique pour réaliser un upload.
 callback, windows.top => accéder à la page qui contient l'iframe
+DSL => dynamic script loading
 
 
 

@@ -1,4 +1,5 @@
-<?php header('Content-type : text/javascript');?>
+<?php header("Content-type: text/javascript"); ?>
 
-var string = 'bonjour <?php echo $_GET['nick']?> ! ';
+var string = 'Bonjour <?php echo $_GET['nick'] ?> !';
+
 receiveMessage(string);

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+        div{
+            height: 20px;
+            width: 150px;
+            border: 1px solid #000000;
+        }
+
+        input{
+            width: 150px;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+ <input type="text" id="text" autocomplete="off"><br/>
+<div id="result" style="display: none">
+
+    <div><a>Res1</a></div>
+    <div>Res2</div>
+    <div>Res3</div>
+</div>
+<script>
+    var text = document.getElementById('text'),
+            div = document.querySelectorAll('div');
+
+
+
+    text.addEventListener('keyup',function(){
+
+
+        for(var i=0; i<div.length;i++){
+            div[i].style.display = 'inline-block';
+        div[i].addEventListener('click', function(e){
+
+            e.target.style.backgroundColor = 'blue';
+        });}
+
+    });
+            var o = 0;
+       while(document.addEventListener('keyup', function(e){
+          if(e.keyCode == 40){
+
+              div[o].style.backgroundColor = 'green';
+
+          }
+        })){
+            o += 1;
+       }
+
+
+
+   function receiveMessage(message) {
+      alert(message)
+    }
+</script>
+</body>
+</html>
