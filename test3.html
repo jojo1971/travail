@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="search" autocomplete="off"/>
+<div id="result"></div>
+</body>
+<script>
+    (function(){
+        var searchElement = document.getElementById('search'),
+                result = document.getElementById('result'),
+                selectedElement = -1,
+                previousRequest,
+                previousValue = searchElement.value;
+
+        function getResult(keywords){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', './TP6.php?='+ encodeURIComponent(keywords));
+            xhr.addEventListener('readystatechange', function(){
+               if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
+                   displayResults(xhr.responseText);
+               }
+            });
+            xhr.send(null);
+            return xhr;
+        }
+
+    }
+
+    )();
+</script>
+</html>
