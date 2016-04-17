@@ -5,31 +5,51 @@
     <title></title>
 </head>
 <body>
-<input type="text" id="search" autocomplete="off"/>
+<input id="search" type="text" autocomplete="off"/>
 <div id="result"></div>
 </body>
 <script>
-    (function(){
-        var searchElement = document.getElementById('search'),
-                result = document.getElementById('result'),
+
+    (function () {
+        var searchResult = document.getElementById('search'),
+                results = document.getElementById('results'),
                 selectedElement = -1,
                 previousRequest,
-                previousValue = searchElement.value;
+                previousValue = searchResult.value;
 
         function getResult(keywords){
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', './TP6.php?='+ encodeURIComponent(keywords));
+            xhr.open('GET', './TP6.php?s=' + encodeURIComponent(keywords));
             xhr.addEventListener('readystatechange', function(){
-               if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
-                   displayResults(xhr.responseText);
-               }
+                if(xhr.readyState == XMLHttpRequest.DONE){
+                    displayResult(xhr.responseText);
+                }
+                xhr.send(null);
+                return xhr;
             });
-            xhr.send(null);
-            return xhr;
         }
+        function displayResult(response){
+            results.style.display = response.length ? 'block':'none';
+            if(response.length){
+                response = response.split('|');
+                results.innerHTML = '';
+                for(var i=0; i<response.length;i++){
+                    div = results.appendChild(document.createElement('div'));
+                    div.innerHTML = response[i];
+                    div.addEventListener('click', function(e){
+                       chooseElement(e.target);
+                    });
+                }
+            }
+        }
+        function chooseElement(result){
+            searchResult.value = previousValue = results.innerHTML;
+            results.style.display = 'none';
+            result.className= '';
+            selectedElement = -1;
+            searchResult.focus();
+        }
+    })();
 
-    }
-
-    )();
 </script>
 </html>
