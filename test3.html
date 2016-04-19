@@ -1,41 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+
     <title></title>
+     <style>
+         body {
+             margin: auto;
+             margin-top: 80px;
+             width: 300px;
+             font-family: sans-serif;
+             font-size: 0.8em;
+             background-color: #F5F5F5;
+         }
+         input[type='submit'] {
+              margin-left: 10px;
+             width: 50px;
+             height: 22px;
+         }
+         #search {
+
+             padding: 2px 4px;
+             border: solid 1px #aaa;
+             width: 220px; height: 22px;
+
+         }
+         #search:hover , #search:focus{
+             border-color: #777;
+         }
+         #results {
+             display: none;
+             border: solid 1px #aaa;
+             border-top-width: 0;
+             width: 228px;
+         }
+         #results div {
+             width: 220px;
+             text-align: left;
+             padding: 2px 4px;
+
+         }
+         #results div:hover, .result_focus{
+             background-color: #ddd !important;
+         }
+
+    </style>
 </head>
 <body>
 <input id="search" type="text" autocomplete="off"/>
-<div id="result"></div>
+<div id="results"></div>
 </body>
 <script>
 
     (function () {
-        var searchResult = document.getElementById('search'),
-                results = document.getElementById('results'),
-                selectedElement = -1,
-                previousRequest,
-                previousValue = searchResult.value;
-
+     var searchElement = document.getElementById('search'),
+        results = document.getElementById('results'),
+             selectedResult = -1,
+             previousRequest,
+             previousValue = searchElement.value;
         function getResult(keywords){
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', './TP6.php?s=' + encodeURIComponent(keywords));
-            xhr.addEventListener('readystatechange', function(){
-                if(xhr.readyState == XMLHttpRequest.DONE){
-                    displayResult(xhr.responseText);
+            xhr.open('GET', './test3.php?s=' + encodeURIComponent(keywords));
+            xhr.addEventListener('readystatechange', function () {
+                if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
+                    displayResults(xhr.responseText);
                 }
-                xhr.send(null);
-                return xhr;
             });
+            xhr.send(null);
+            return xhr;
         }
-        function displayResult(response){
-            results.style.display = response.length ? 'block':'none';
+        function displayResults(response){
+            results.style.display = response.length ? 'block': 'none';
+
             if(response.length){
-                response = response.split('|');
-                results.innerHTML = '';
-                for(var i=0; i<response.length;i++){
+                 response = response.split('|');
+                 results.innerHTML = '';
+                for(var i= 0, div; i<response.length;i++){
                     div = results.appendChild(document.createElement('div'));
                     div.innerHTML = response[i];
+
                     div.addEventListener('click', function(e){
                        chooseElement(e.target);
                     });
@@ -43,12 +86,39 @@
             }
         }
         function chooseElement(result){
-            searchResult.value = previousValue = results.innerHTML;
+            searchElement.value = previousValue = result.innerHTML;
             results.style.display = 'none';
-            result.className= '';
-            selectedElement = -1;
-            searchResult.focus();
+            result.className = '';
+            selectedResult = -1;
+            searchElement.focus();
         }
+        searchElement.addEventListener('keyup', function(e){
+           var divs = results.getElementsByTagName('div');
+            if(e.keyCode == 38 && selectedResult > -1){
+                divs[selectedResult--].className = '';
+                if(selectedResult > -1){
+                    divs[selectedResult].className = 'result_focus';
+                }
+            }
+           else if(e.keyCode == 40 && selectedResult < divs.length -1){
+                results.style.display = 'block';
+                if(selectedResult > -1){
+                    divs[selectedResult].className = '';
+                }
+                divs[++selectedResult].className = 'result_focus';
+            }
+           else if(e.keyCode == 13 && selectedResult >-1){
+                chooseElement(divs[selectedResult]);
+            }
+           else if( searchElement.value != previousValue){
+                previousValue = searchElement.value;
+                if(previousRequest && previousRequest.readyState < XMLHttpRequest.DONE){
+                    previousRequest.abort();
+                }
+                previousRequest = getResult(previousValue);
+                selectedResult = -1;
+            }
+        });
     })();
 
 </script>

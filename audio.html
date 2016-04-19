@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family:  "Trebuchet MS", Helvetica, Arial, sans-serifsans-serif;
+        }
+        #divPlayer {
+            width: 300px;
+            margin: auto;
+            border: 1px solid #aaa;
+            border-radius: 2px;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 17px;
+            line-height: 30px;
+            margin-bottom: 25px;
+            border-bottom: #000 1px solid;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 25px;
+        }
+        button, input[type='button'], input[type='submit']{
+            padding: 3px 12px 3px 12px;
+            cursor: pointer;
+
+        }
+        .control {
+            width: 78px;
+        }
+        .volume{
+            display: inline-block;
+            position: relative;
+            height: 25px;
+            vertical-align: bottom;
+
+        }
+        #progressBarControl {
+            width: 210px;
+            height: 15px;
+            border: solid 1px #aaa;
+            margin-bottom: 15px;
+            display: inline-block;
+            display: inline-block;
+        }
+        #progressBar {
+            display: inline-block;
+            line-height: 15px;
+            background: #ebebeb;
+            cursor: pointer;
+            white-space: nowrap;
+            width: 0;
+            font-size: 9px;
+            height: 15px;
+        }
+        .volume a {
+	display: inline-block;
+	background: #ebebeb;
+	width: 8px;
+	vertical-align: bottom;
+	margin-left: 0px;
+	margin-right: 0px;
+	cursor: pointer;
+	border-left: 1px solid #fff;
+	position: absolute;
+	bottom: 0;
+}
+        .stick1{height: 5px;left: 0;}
+        .stick2{height: 10px;left: 9px;}
+        .stick3{height: 15px;left: 18px;}
+        .stick4{height: 20px;left: 27px;}
+        .stick5{height: 25px;left: 36px;}
+
+    </style>
+    <title></title>
+</head>
+<body>
+<div id="divPlayer">
+    <h1>Lite-player</h1>
+    <audio id="audioPlayer" ontimeupdate="update(this)" src="test.mp3"></audio>
+    <div id="progressBarControl">
+        <div id="progressBar">Pas de lecture</div>
+    </div>
+    <button class="control" onclick="play('audioPlayer',this)">Play</button>
+    <button class="control" onclick="resume('audioPlayer')">Stop</button>
+
+    <span class="volume">
+        <a class="stick1" onclick="volume('audioPlayer',0)"></a>
+        <a class="stick2" onclick="volume('audioPlayer',0.3)"></a>
+        <a class="stick3" onclick="volume('audioPlayer',0.5)"></a>
+        <a class="stick4" onclick="volume('audioPlayer',0.7)"></a>
+        <a class="stick5" onclick="volume('audioPlayer',1)"></a>
+    </span>
+
+</div>
+
+<script>
+   function play(idPlayer, control){
+       var player = document.querySelector('#'+idPlayer);
+       if(player.paused){
+           player.play();
+           control.textContent = 'Pause';
+       }else{
+           player.pause();
+           control.textContent = 'Play';
+       }
+   }
+    function resume(idPlayer){
+        var player = document.querySelector('#'+idPlayer);
+        player.currentTime = 0;
+        player.pause();
+
+    }
+    function volume(idPlayer, vol){
+        var player = document.querySelector('#' + idPlayer);
+        player.volume = vol;
+    }
+    function update(player) {
+        var duration = player.duration;
+        var time = player.currentTime;
+        var fraction = duration / time;
+        var percent = Math.ceil(fraction * 100);
+
+        var progress = document.querySelector('progressBar');
+
+        progress.style.width = percent + '%';
+        progress.textContent = percent + '%';
+    }
+</script>
+</body>
+</html>
