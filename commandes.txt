@@ -141,8 +141,15 @@ shift unshift pop push =>les piles (FILO : first in last out), les files(FIFO)ut
 forEach => boucle sur tableau
 Image().
 load().
+document.write() => ecrire du texte.
+new Date() => date du jour.
+new Date().getDate()ou.getMonth()ou.getHours()ou.getSecondes()....
+
+__________
 polyfills => scripts pour la compatibilité des browsers.
 les closures => méthode permettant d'isoler l'utilisation d'une variable sur une boucle en fonction du temps.
+____________
+
 JSON => javascript object notation
 __________________________________
 AJAX : (communication avec le serveur)
@@ -165,6 +172,9 @@ formData() avec la méthode append('champs','valeur') => envoi de données d'un 
 iframe => technique pour réaliser un upload.
 callback, windows.top => accéder à la page qui contient l'iframe
 DSL => dynamic script loading
+
+
+
 
 
 
