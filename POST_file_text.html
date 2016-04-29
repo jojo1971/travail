@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Language" content="fr" />
+<title>Teste d'un formulaire AJAX</title>
+<head>
+<style type="text/css">
+.bordure{
+border:1px solid red;
+margin:5px;
+padding:5px;
+}
+</style>
+<script type="text/javascript" src="fonctions.js"></script>
+</head>
+ 
+<body>
+ 
+<form method="post" id="monform">
+Pseudo : <input type="text" name="pseudo" id="pseudo" value=""/><br/>
+Message : <input type="text" name="message" id="message" value=""/><br/>
+Envoyer : <input type="button" value="Go" onclick="teste_ajax()">
+</form>
+ 
+<div id="mondiv">La réponse sera affiché à la place de ce texte.</div>
+ 
+</body>
+</html>

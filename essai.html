@@ -7,13 +7,34 @@
 </head>
 <body>
 <div id="output">
-   <p id="montext">Voici du texte <a id="monlien">et un petit lien
-   </a><strong> et puis le reste.</strong></p>
+
 </div>
 
 
 <script>
-alert('jojo');
+    (function(){
+      var dndHandler = {
+          draggedElement : null,
+          applyDragEvents : function(element){
+              element.draggable = true;
+              var dndHandler = this;
+              element.addEventListener('dragstart', function (e){
+                 dndHandler.applyDragEvents = e.target;
+                  e.dataTransfert.setData('text/plain', '');
+              });
+          },
+          applyDropEvents : function(dropper){
+              dropper.addEventListener('dropover', function(e){
+                  e.preventDefault();
+                  this.className = 'dropper hover_dropper';
+              });
+              dropper.addEventListener('dropleave', function(e){
+                  this.className = 'dropper';
+              });
+          }
+      }
+
+    })();
 
 
 

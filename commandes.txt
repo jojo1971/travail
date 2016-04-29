@@ -201,7 +201,7 @@ DTD et XML Schéma=> schéma de validité d'un code, par ex : <ul> ne peut conte
 XHTML => présentation docu web.
 svg => dessin vectoriel en 2D.
 SMIL => animation déclarative.
-XForms => générationd e formulaire Web.
+XForms => génération de formulaire Web.
 WLink => pour les liens.
 XMPP => protocole de messagerie instantanée.
 
