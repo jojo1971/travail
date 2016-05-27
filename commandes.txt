@@ -204,6 +204,16 @@ SMIL => animation déclarative.
 XForms => génération de formulaire Web.
 WLink => pour les liens.
 XMPP => protocole de messagerie instantanée.
+_________________________________________________
+LINUX
+ifconfig
+cd => changer de dossier
+echo 1 > /proc/sys/net/ipv4/ip_forward => écrit 1 dans le fichier ip_forward
+sudo => super utilisateur
+sudo su => super utilisateur permanent
+chmod => changer les droit sur un fichier
+netstat -antp => etat d'un réseau
+netstat -antp | grep 92.18.40.22=> etat d'un réseau en isolant la ligne de l'adresse indiquée
 
 
 
