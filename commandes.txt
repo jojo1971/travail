@@ -1,4 +1,4 @@
-type
+﻿type
 rd
 cd
 cd.. (revient en arri�re)
@@ -152,7 +152,7 @@ ____________
 
 JSON => javascript object notation
 __________________________________
-AJAX : (communication avec le serveur)
+AJAX :Asynchronous Javascript and XML(communication avec le serveur)
 XHR = XMLHttpRequest.
 GET => envoi de requètes.(les paramètrees de l'URL doivent être encodés avec encodeURIComponent() car elles sont envoyées en UTF-8).
 POST => envoi des valeurs contenues dans un formulaire
@@ -253,3 +253,5 @@ git br -D nom_de_la_branche (forcer suppression)
 
 git branch gh-pages (cr�er une branch pour �tre h�berg� par github)
 git push origin gh-pages (pour l'envoyer)
+____________________
+REST : Representationnal state transfert
