@@ -255,3 +255,33 @@ git branch gh-pages (cr�er une branch pour �tre h�berg� par github)
 git push origin gh-pages (pour l'envoyer)
 ____________________
 REST : Representationnal state transfert
+_________
+Symfony 2 :
+architecture MVC : modèle vue contrôleur
+token = clé générée à chaque fois qu'on régenère la page ou le site pour éviter les failles CSRF(par ex : supprimer une image par l'url)
+twig =  moteur de template pour Symfony
+Doctrine = bundle de Symfony 2, c'est un ORM(couche d'abstraction pour le traitement base de données)
+créer une entité : php app/console doctrine:generate:entity
+=> créer base : "php app/console doctrine:database:create"+"name = nom du bundle:nom quelconque",
+pour créer la table dans la base(ne pas oublier non de la base dans parameters) => "php app/console doctrine:schema:create"
+pour générer setteurs et getteur :php app/console doctrine:generate:entities Tuto
+pour entrer donnees : php app/console doctrine:schema:update --force.
+générer un formulaire = php app/console doctrine:generate:form TutoAnimauxBundle:Animal
+mise a jour : compaoser.phar update ou self-update
+pour importer fosuser de git : git clone https://github.com/FriendsOfSymfony/FOSUserBundle.git vendor/bundles/FOS/UserBundle
+créer un bundle : php app/console generate:bundle
+tout ce qui commence par @ = annotation
+ORM : object relationnel mapping
+connaitre tous les chemins : php app/console router:debug
+types utilisateurs : php app/console fos    exemple créer une type = fos:user:create   ou changer le rôle = fos:user:promote    puis ROLE_ADMIN
+
+changer la langue : dans config =>  translator:    ~   et dans parameters =>  locale: fr
+
+relations base de données : one to one : par exemple une image pour un article, many to one : par ex article et commantaires,
+many to many : un article pour plusieurs categories mais une categorie peut avoir plusieurs articles aussi,
+le bidirectionnel(many to one B) : pour recupérer les commantaires à partir d'un article
+
+fichier .yml = YAML
+~ = tilde
+| = pipe
+nl2br : pour sauter une ligne
