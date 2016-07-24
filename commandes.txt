@@ -264,7 +264,7 @@ Doctrine = bundle de Symfony 2, c'est un ORM(couche d'abstraction pour le traite
 créer une entité : php app/console doctrine:generate:entity
 => créer base : "php app/console doctrine:database:create"+"name = nom du bundle:nom quelconque",
 pour créer la table dans la base(ne pas oublier non de la base dans parameters) => "php app/console doctrine:schema:create"
-pour générer setteurs et getteur :php app/console doctrine:generate:entities Tuto
+pour générer setteurs et getteur :php app/console doctrine:generate:entities UtilisateursBundle:Utilisateurs
 pour entrer donnees : php app/console doctrine:schema:update --force.
 générer un formulaire = php app/console doctrine:generate:form TutoAnimauxBundle:Animal
 mise a jour : compaoser.phar update ou self-update
@@ -280,6 +280,8 @@ changer la langue : dans config =>  translator:    ~   et dans parameters =>  lo
 relations base de données : one to one : par exemple une image pour un article, many to one : par ex article et commantaires,
 many to many : un article pour plusieurs categories mais une categorie peut avoir plusieurs articles aussi,
 le bidirectionnel(many to one B) : pour recupérer les commantaires à partir d'un article
+
+fixtures : tester un base de données avec des données.=>pour entrer les données : php app/console doctrine:fixture:load ____puis Yes.
 
 fichier .yml = YAML
 ~ = tilde
