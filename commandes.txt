@@ -274,6 +274,8 @@ tout ce qui commence par @ = annotation
 ORM : object relationnel mapping
 connaitre tous les chemins : php app/console router:debug
 types utilisateurs : php app/console fos    exemple créer une type = fos:user:create   ou changer le rôle = fos:user:promote    puis ROLE_ADMIN
+Pour faire interpréter du html d'un contenu : {{ page.contenu|raw }}
+Pour une boucle 10X : {% for i in 0..10 %}
 
 changer la langue : dans config =>  translator:    ~   et dans parameters =>  locale: fr
 

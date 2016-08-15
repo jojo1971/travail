@@ -61,8 +61,8 @@
       <file leaf-file-name="commandes.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commandes.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75994694" vertical-offset="4238" max-vertical-offset="5015">
-              <caret line="283" column="133" selection-start-line="283" selection-start-column="133" selection-end-line="283" selection-end-column="133" />
+            <state vertical-scroll-proportion="0.5795756" vertical-offset="4272" max-vertical-offset="5049">
+              <caret line="277" column="42" selection-start-line="277" selection-start-column="42" selection-end-line="277" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -436,7 +436,13 @@
       <option name="project" value="LOCAL" />
       <updated>1468855002111</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="popo">
+      <created>1469381062509</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1469381062509</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -871,8 +877,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commandes.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75994694" vertical-offset="4238" max-vertical-offset="5015">
-          <caret line="283" column="133" selection-start-line="283" selection-start-column="133" selection-end-line="283" selection-end-column="133" />
+        <state vertical-scroll-proportion="0.5795756" vertical-offset="4272" max-vertical-offset="5049">
+          <caret line="277" column="42" selection-start-line="277" selection-start-column="42" selection-end-line="277" selection-end-column="42" />
           <folding />
         </state>
       </provider>
