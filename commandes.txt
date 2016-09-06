@@ -256,7 +256,14 @@ git push origin gh-pages (pour l'envoyer)
 ____________________
 REST : Representationnal state transfert
 _________
+
+
+MVC = Modéle vue contrôleur = design patterns
 Symfony 2 :
+pour une redirection dans le constructeur => return $this->redirectToRoute('Route');
+pour intercepter une redirection dans le constructeur aller sur app/config/config_dev.yml et mettre intercept_redirects à true
+vider le cache : php app/console cache:clear ou php app/console cache:clear --env=prod  (si prob, refaire ou essayer : app/cache/dev ou app/cache/prod)
+connaitre la version de symfony : app/console --version
 architecture MVC : modèle vue contrôleur
 token = clé générée à chaque fois qu'on régenère la page ou le site pour éviter les failles CSRF(par ex : supprimer une image par l'url)
 twig =  moteur de template pour Symfony
@@ -276,6 +283,28 @@ connaitre tous les chemins : php app/console router:debug
 types utilisateurs : php app/console fos    exemple créer une type = fos:user:create   ou changer le rôle = fos:user:promote    puis ROLE_ADMIN
 Pour faire interpréter du html d'un contenu : {{ page.contenu|raw }}
 Pour une boucle 10X : {% for i in 0..10 %}
+getRequest->remplacé par ->get('request')
+pour créer un formulaire à partir de l'entité : php app/console generate:doctrine:form EcommerceBundle:UtilisateursAdresses
+
+exemple pour getFlashBag : $this->get('session')->getFlashBag()->add('info', 'Une erreur est survenue');
+                           return $this->redirect($this->generateUrl('oc_platform_home_view', array('id'=> 5)));
+                           et dans la vue : {% for message in app.session.flashbag.get('info') %}
+                                            <p>Message flash : {{ message }}</p>
+                                            {% endfor %}
+installer un bundle avec le composer : mettre reference dans le require du composer.json puis dans le terminal :  php composer.phar update  // ou composer update
+mettre à jour le compser : composer self-update
+CRUD : create,read,update,delete
+Pour generer un crud => php app/console generate:doctrine:crud
+         -> The Entity shortcut name: EcommerceBundle:Produits
+         -> Do you want to generate the "write" actions [no]? yes
+         ->Configuration format (yml, xml, php, or annotation) [annotation]: yml
+         ->Routes prefix [/produits]: adminProduits
+         ->yes
+         ->yes
+
+
+Pour mettre à jour le dossier web après un ajout dans dossier public des bundles : php app/console assets:install web
+
 
 changer la langue : dans config =>  translator:    ~   et dans parameters =>  locale: fr
 
@@ -285,7 +314,11 @@ le bidirectionnel(many to one B) : pour recupérer les commantaires à partir d'
 
 fixtures : tester un base de données avec des données.=>pour entrer les données : php app/console doctrine:fixture:load ____puis Yes.
 
+
+pour numéroter les lignes : {{ loop.index }}
+path =>pour les url
+asset => pour les images
 fichier .yml = YAML
-~ = tilde
-| = pipe
+~ = tilde => pour concaténer
+| = pipe (pour les filtres : ex:la tva)
 nl2br : pour sauter une ligne
