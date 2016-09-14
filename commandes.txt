@@ -257,7 +257,7 @@ ____________________
 REST : Representationnal state transfert
 _________
 
-
+ORM = object relation mapper (doctrine) : gestion de la base de donnee
 MVC = Modéle vue contrôleur = design patterns
 Symfony 2 :
 pour une redirection dans le constructeur => return $this->redirectToRoute('Route');
@@ -267,18 +267,36 @@ connaitre la version de symfony : app/console --version
 architecture MVC : modèle vue contrôleur
 token = clé générée à chaque fois qu'on régenère la page ou le site pour éviter les failles CSRF(par ex : supprimer une image par l'url)
 twig =  moteur de template pour Symfony
+pour afficher une variqble sans qu'elle soit interprétée par twig (en texte brut) : {{ ma_variable_html|raw }}
 Doctrine = bundle de Symfony 2, c'est un ORM(couche d'abstraction pour le traitement base de données)
+
 créer une entité : php app/console doctrine:generate:entity
+The Entity shortcut name: OCPlatformBundle:Advert
+New field name (press <return> to stop adding fields): date
+Field type [string]: datetime
+New field name (press <return> to stop adding fields): title
+Field type [string]: string
+Field length [255]: 255
+
+
+
 => créer base : "php app/console doctrine:database:create"+"name = nom du bundle:nom quelconque",
 pour créer la table dans la base(ne pas oublier non de la base dans parameters) => "php app/console doctrine:schema:create"
+
+php app/console doctrine:schema:update --dump-sql : Elle va comparer l'état actuel de la base de données avec ce qu'elle devrait être en tenant compte de toutes nos entités.
+                                                    Puis, elle affiche les requêtes SQL à exécuter pour passer de l'état actuel au nouvel état.
+pour enfin entrer donnees : php app/console doctrine:schema:update --force.
+
+
+
 pour générer setteurs et getteur :php app/console doctrine:generate:entities UtilisateursBundle:Utilisateurs
-pour entrer donnees : php app/console doctrine:schema:update --force.
+
 générer un formulaire = php app/console doctrine:generate:form TutoAnimauxBundle:Animal
 mise a jour : compaoser.phar update ou self-update
 pour importer fosuser de git : git clone https://github.com/FriendsOfSymfony/FOSUserBundle.git vendor/bundles/FOS/UserBundle
 créer un bundle : php app/console generate:bundle
 tout ce qui commence par @ = annotation
-ORM : object relationnel mapping
+
 connaitre tous les chemins : php app/console router:debug
 types utilisateurs : php app/console fos    exemple créer une type = fos:user:create   ou changer le rôle = fos:user:promote    puis ROLE_ADMIN
 Pour faire interpréter du html d'un contenu : {{ page.contenu|raw }}
@@ -302,8 +320,14 @@ Pour generer un crud => php app/console generate:doctrine:crud
          ->yes
          ->yes
 
+pour définir la langue locale mettre dans routing général : ecommerce:
+                                                                resource: "@EcommerceBundle/Resources/config/routing.yml"
+                                                                prefix:   /{_locale}/
 
 Pour mettre à jour le dossier web après un ajout dans dossier public des bundles : php app/console assets:install web
+
+pour voir tous les passages à tranduire :php app/console translation:update fr EcommerceBundle --dump-messages
+pour générer automatiquement le fichier message de traduction : php app/console translation:update fr EcommerceBundle --force
 
 
 changer la langue : dans config =>  translator:    ~   et dans parameters =>  locale: fr
@@ -314,8 +338,14 @@ le bidirectionnel(many to one B) : pour recupérer les commantaires à partir d'
 
 fixtures : tester un base de données avec des données.=>pour entrer les données : php app/console doctrine:fixture:load ____puis Yes.
 
+pour exporter dans le projet des données d'une base : php app/console doctrine:mapping:convert yml ./src/Utilisateurs/UtilisateursBundle/Resources/config/doctrine/metadata/orm --from-database --force
+pour importer en annotation : php app/console doctrine:mapping:import UtilisateursBundle annotation
 
 pour numéroter les lignes : {{ loop.index }}
+
+pour les contraintes pour le chaps des entités :(anotation) @Assert\NotBlank(message="Ce champs doit être rempli :")
+                                                       pour les mails : @Assert\Email(message="Attention adresse Email", checkMX = true)
+                                                       pour me nombre de caractères : @Assert\Length(min = "2") ou (min = "2", max = "5", minMessage="Attention 2 lettres minimum ! ")
 path =>pour les url
 asset => pour les images
 fichier .yml = YAML
