@@ -256,10 +256,11 @@ git push origin gh-pages (pour l'envoyer)
 ____________________
 REST : Representationnal state transfert
 _________
-
+Symfony 2 :
 ORM = object relation mapper (doctrine) : gestion de la base de donnee
 MVC = Modéle vue contrôleur = design patterns
-Symfony 2 :
+DQL = Doctrine Query Language
+DRY = Don't Repeat Yourself
 pour une redirection dans le constructeur => return $this->redirectToRoute('Route');
 pour intercepter une redirection dans le constructeur aller sur app/config/config_dev.yml et mettre intercept_redirects à true
 vider le cache : php app/console cache:clear ou php app/console cache:clear --env=prod  (si prob, refaire ou essayer : app/cache/dev ou app/cache/prod)
@@ -278,6 +279,31 @@ New field name (press <return> to stop adding fields): title
 Field type [string]: string
 Field length [255]: 255
 
+slug : modifier un champ par un alias : ex : Le chat mange le souris ! => le-chat-mange-la-souris
+     - dans l'entité :    /**
+     * @Gedmo\Slug(fields={"title"})
+     * @ORM\Column(length=128, unique=true)
+    */
+
+    private $slug;
+    -dans config :stof_doctrine_extensions:
+                                        orm:
+                                            default:
+                                                sluggable: true
+     dans constructeur :    public function testAction(){
+                                            $advert = new Advert();
+                                            $advert->setTitle('Recherche chomeur');
+                                            $advert->setAuthor('test');
+                                            $advert->setContent('Pour test');
+
+                                            $em = $this->getDoctrine()->getManager();
+                                            $em->persist($advert);
+                                            $em->flush();
+
+                                            return new Response('Slug généré : '.$advert->getSlug());
+                                        }
+     dans la console : php app/console doctrine:schema:update --dump-sql
+
 
 
 => créer base : "php app/console doctrine:database:create"+"name = nom du bundle:nom quelconque",
@@ -287,6 +313,7 @@ php app/console doctrine:schema:update --dump-sql : Elle va comparer l'état act
                                                     Puis, elle affiche les requêtes SQL à exécuter pour passer de l'état actuel au nouvel état.
 pour enfin entrer donnees : php app/console doctrine:schema:update --force.
 
+Pour faire une requete à partir de la console : php app/console doctrine:query:dql "SELECT a FROM OCPlatformBundle:Advert a"
 
 
 pour générer setteurs et getteur :php app/console doctrine:generate:entities UtilisateursBundle:Utilisateurs
@@ -331,12 +358,31 @@ pour générer automatiquement le fichier message de traduction : php app/consol
 
 
 changer la langue : dans config =>  translator:    ~   et dans parameters =>  locale: fr
+callback = méthode d'une entité. exemple dans l'entité:     /**
+                                                             * @ORM\Column(name="updated_at", type="datetime", nullable=true)
+                                                             */
+                                                            private $updatedAt;
 
+
+                                                            /**
+                                                             * @ORM\PreUpdate
+                                                             */
+                                                            public function updateDate(){
+                                                                $this->setUpdatedAt(new \DateTime());
+                                                            }
+
+Les relations :
 relations base de données : one to one : par exemple une image pour un article, many to one : par ex article et commantaires,
 many to many : un article pour plusieurs categories mais une categorie peut avoir plusieurs articles aussi,
 le bidirectionnel(many to one B) : pour recupérer les commantaires à partir d'un article
+Le côté Many est toujours du côté propriétaire.
+Pour du bidirectionnel : côté proprietaire : @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\Application", inversedBy="advert")
+                                             @ORM\JoinColumn(nullable=false)
+                         côté inverse : @ORM\OneToMany(targetEntity="OC\PlatformBundle\Entity\Advert", mappedBy="applications")
+                                        @ORM\JoinColumn(nullable=false)
 
 fixtures : tester un base de données avec des données.=>pour entrer les données : php app/console doctrine:fixture:load ____puis Yes.
+Si on ne veut pas vider la base de donnée sur un fixtures load =>  php app/console doctrine:fixture:load  --append
 
 pour exporter dans le projet des données d'une base : php app/console doctrine:mapping:convert yml ./src/Utilisateurs/UtilisateursBundle/Resources/config/doctrine/metadata/orm --from-database --force
 pour importer en annotation : php app/console doctrine:mapping:import UtilisateursBundle annotation
