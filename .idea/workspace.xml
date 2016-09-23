@@ -58,8 +58,8 @@
       <file leaf-file-name="commandes.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commandes.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="292" column="57" selection-start-line="292" selection-start-column="57" selection-end-line="292" selection-end-column="57" />
+            <state relative-caret-position="481">
+              <caret line="263" column="209" selection-start-line="263" selection-start-column="209" selection-end-line="263" selection-end-column="209" />
               <folding />
             </state>
           </provider>
@@ -300,7 +300,10 @@
       <workItem from="1474102405042" duration="698000" />
       <workItem from="1474207548462" duration="1825000" />
       <workItem from="1474263648432" duration="1833000" />
-      <workItem from="1474371950742" duration="1313000" />
+      <workItem from="1474371950742" duration="2631000" />
+      <workItem from="1474441033094" duration="1144000" />
+      <workItem from="1474529953080" duration="1111000" />
+      <workItem from="1474639106230" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="changements">
       <created>1457343451549</created>
@@ -484,11 +487,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473839790217</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="popo">
+      <created>1474383163700</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1474383163700</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45364000" />
+    <option name="totallyTimeSpent" value="48946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="916" extended-state="0" />
@@ -863,8 +873,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commandes.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="292" column="57" selection-start-line="292" selection-start-column="57" selection-end-line="292" selection-end-column="57" />
+        <state relative-caret-position="481">
+          <caret line="263" column="209" selection-start-line="263" selection-start-column="209" selection-end-line="263" selection-end-column="209" />
           <folding />
         </state>
       </provider>

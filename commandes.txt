@@ -261,6 +261,8 @@ ORM = object relation mapper (doctrine) : gestion de la base de donnee
 MVC = Modéle vue contrôleur = design patterns
 DQL = Doctrine Query Language
 DRY = Don't Repeat Yourself
+Le champ CSRF, pour Cross Site Request Forgeries, permet de vérifier que l'internaute qui valide le formulaire est bien celui qui l'a affiché. C'est un moyen de se protéger des envois de formulaire frauduleux.
+
 pour une redirection dans le constructeur => return $this->redirectToRoute('Route');
 pour intercepter une redirection dans le constructeur aller sur app/config/config_dev.yml et mettre intercept_redirects à true
 vider le cache : php app/console cache:clear ou php app/console cache:clear --env=prod  (si prob, refaire ou essayer : app/cache/dev ou app/cache/prod)
@@ -302,8 +304,8 @@ slug : modifier un champ par un alias : ex : Le chat mange le souris ! => le-cha
 
                                             return new Response('Slug généré : '.$advert->getSlug());
                                         }
-     dans la console : php app/console doctrine:schema:update --dump-sql
-
+     dans la console : php app/console doctrine:schema:update --dump-sql (pour verifier les requetes)
+                       puis  :php app/console doctrine:schema:update --force
 
 
 => créer base : "php app/console doctrine:database:create"+"name = nom du bundle:nom quelconque",
