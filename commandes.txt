@@ -1,4 +1,8 @@
-﻿type
+﻿commande executer :
+firefox.exe -P  -> pour accéder aux extensions firefox
+____
+
+type
 rd
 cd
 cd.. (revient en arri�re)
@@ -214,18 +218,6 @@ sudo su => super utilisateur permanent
 chmod => changer les droit sur un fichier
 netstat -antp => etat d'un réseau
 netstat -antp | grep 92.18.40.22=> etat d'un réseau en isolant la ligne de l'adresse indiquée
-
-
-
-
-
-
-
-
-
-
-
-
 _______
 credential : cl� de connexion pour une api
 MIME : Multipurpose internet mail extensions => standard pour définir un type de document
@@ -320,7 +312,7 @@ Pour faire une requete à partir de la console : php app/console doctrine:query:
 
 pour générer setteurs et getteur :php app/console doctrine:generate:entities UtilisateursBundle:Utilisateurs
 
-générer un formulaire = php app/console doctrine:generate:form TutoAnimauxBundle:Animal
+générer un formulaire = php app/console doctrine:generate:form TutoAnimauxBundle:Animal (pour créer les fichiers ----Type)
 mise a jour : compaoser.phar update ou self-update
 pour importer fosuser de git : git clone https://github.com/FriendsOfSymfony/FOSUserBundle.git vendor/bundles/FOS/UserBundle
 créer un bundle : php app/console generate:bundle
@@ -391,7 +383,7 @@ pour importer en annotation : php app/console doctrine:mapping:import Utilisateu
 
 pour numéroter les lignes : {{ loop.index }}
 
-pour les contraintes pour le chaps des entités :(anotation) @Assert\NotBlank(message="Ce champs doit être rempli :")
+pour les contraintes pour le champs des entités :(anotation) @Assert\NotBlank(message="Ce champs doit être rempli :")
                                                        pour les mails : @Assert\Email(message="Attention adresse Email", checkMX = true)
                                                        pour me nombre de caractères : @Assert\Length(min = "2") ou (min = "2", max = "5", minMessage="Attention 2 lettres minimum ! ")
 path =>pour les url
@@ -400,3 +392,33 @@ fichier .yml = YAML
 ~ = tilde => pour concaténer
 | = pipe (pour les filtres : ex:la tva)
 nl2br : pour sauter une ligne
+__________________________________
+JAVA
+
+La classe java.text.DecimalFormat permet de formater une valeur numérique dans le format de son choix en utilisant un pattern dont les symboles principaux sont les suivants :
+
+    0 permet de représenter un chiffre qui devra obligatoirement être présent, même s'il s'agit d'un zéro inutile.
+    # permet de représenter un chiffre en ignorant les zéros inutiles.
+    . (le point) permet de représenter le séparateur de la partie décimale.
+    , (la virgule) permet de représenter le séparateur des groupes (milliers, millions, etc.).
+
+
+(vous pouvez vous reporter à la documentation de la classe DecimalFormat pour obtenir la liste complète de tous les symboles).
+Format 	0 	0,02 	0,8 	12,9
+------------------------------------------------------
+# 	0 	0 	1 	13
+### 	0 	0 	1 	13
+0 	0 	0 	1 	13
+000 	000 	000 	001 	013
+#.## 	0 	0,02 	0,8 	12,9
+0.## 	0 	0,02 	0,8 	12,9
+0.00 	0,00 	0,02 	0,80 	12,90
+#.00 	,00 	,02 	,80 	12,90
+#,##0.00 	0,00 	0,02 	0,80 	12,90
+
+par exemple :
+
+double ma_Valeur ;
+DecimalFormat df = new DecimalFormat("#.##");
+System.out.println(df.format(ma_Valeur));
+
