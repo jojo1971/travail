@@ -421,4 +421,6 @@ par exemple :
 double ma_Valeur ;
 DecimalFormat df = new DecimalFormat("#.##");
 System.out.println(df.format(ma_Valeur));
+-------------------------------
+JOptionPane.showMessageDialog(null, "teste"); --> pour afficher une boite de dialogue
 
