@@ -274,12 +274,12 @@ pour afficher une variqble sans qu'elle soit interprétée par twig (en texte br
 Doctrine = bundle de Symfony 2, c'est un ORM(couche d'abstraction pour le traitement base de données)
 
 créer une entité : php app/console doctrine:generate:entity
-The Entity shortcut name: OCPlatformBundle:Advert
-New field name (press <return> to stop adding fields): date
-Field type [string]: datetime
-New field name (press <return> to stop adding fields): title
-Field type [string]: string
-Field length [255]: 255
+                    The Entity shortcut name: OCPlatformBundle:Advert
+                    New field name (press <return> to stop adding fields): date
+                    Field type [string]: datetime
+                    New field name (press <return> to stop adding fields): title
+                    Field type [string]: string
+                    Field length [255]: 255
 
 slug : modifier un champ par un alias : ex : Le chat mange le souris ! => le-chat-mange-la-souris
      - dans l'entité :    /**
@@ -320,7 +320,7 @@ Pour faire une requete à partir de la console : php app/console doctrine:query:
 
 pour générer setteurs et getteur :php app/console doctrine:generate:entities UtilisateursBundle:Utilisateurs
 
-générer un formulaire = php app/console doctrine:generate:form TutoAnimauxBundle:Animal
+générer un formulaire pour une entité = php app/console doctrine:generate:form TutoAnimauxBundle:Animal
 mise a jour : compaoser.phar update ou self-update
 pour importer fosuser de git : git clone https://github.com/FriendsOfSymfony/FOSUserBundle.git vendor/bundles/FOS/UserBundle
 créer un bundle : php app/console generate:bundle
