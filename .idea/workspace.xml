@@ -63,8 +63,13 @@
       <file leaf-file-name="commandes.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commandes.txt">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0" vertical-offset="5474" max-vertical-offset="6936">
               <caret line="322" column="33" selection-start-line="322" selection-start-column="33" selection-end-line="322" selection-end-column="33" />
+=======
+            <state relative-caret-position="108">
+              <caret line="322" column="121" selection-start-line="322" selection-start-column="121" selection-end-line="322" selection-end-column="121" />
+>>>>>>> 858aa539829f8443f19fb68c111203058b6b7e88
               <folding />
             </state>
           </provider>
@@ -285,7 +290,27 @@
       <workItem from="1473406102610" duration="1383000" />
       <workItem from="1473669096758" duration="901000" />
       <workItem from="1473783343086" duration="596000" />
+<<<<<<< HEAD
       <workItem from="1473834270501" duration="3067000" />
+=======
+      <workItem from="1473834270501" duration="4293000" />
+      <workItem from="1473860006126" duration="637000" />
+      <workItem from="1473917780482" duration="2453000" />
+      <workItem from="1474008390762" duration="3063000" />
+      <workItem from="1474102405042" duration="698000" />
+      <workItem from="1474207548462" duration="1825000" />
+      <workItem from="1474263648432" duration="1833000" />
+      <workItem from="1474371950742" duration="2631000" />
+      <workItem from="1474441033094" duration="1144000" />
+      <workItem from="1474529953080" duration="1111000" />
+      <workItem from="1474639106230" duration="618000" />
+      <workItem from="1474877483682" duration="1196000" />
+      <workItem from="1474963985709" duration="1785000" />
+      <workItem from="1475042532866" duration="1190000" />
+      <workItem from="1475316398738" duration="796000" />
+      <workItem from="1475358068607" duration="590000" />
+      <workItem from="1477298715904" duration="742000" />
+>>>>>>> 858aa539829f8443f19fb68c111203058b6b7e88
     </task>
     <task id="LOCAL-00001" summary="changements">
       <created>1457343451549</created>
@@ -437,6 +462,7 @@
       <option name="project" value="LOCAL" />
       <updated>1473144417438</updated>
     </task>
+<<<<<<< HEAD
     <option name="localTasksCounter" value="26" />
     <servers />
   </component>
@@ -446,6 +472,38 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
     <editor active="false" />
+=======
+    <task id="LOCAL-00026" summary="popo">
+      <created>1473839790217</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1473839790217</updated>
+    </task>
+    <task id="LOCAL-00027" summary="popo">
+      <created>1474383163700</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1474383163700</updated>
+    </task>
+    <task id="LOCAL-00028" summary="popo">
+      <created>1474639125311</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1474639125311</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="55854000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="916" extended-state="7" />
+    <editor active="true" />
+>>>>>>> 858aa539829f8443f19fb68c111203058b6b7e88
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32724902" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -819,8 +877,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commandes.txt">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="5474" max-vertical-offset="6936">
           <caret line="322" column="33" selection-start-line="322" selection-start-column="33" selection-end-line="322" selection-end-column="33" />
+=======
+        <state relative-caret-position="108">
+          <caret line="322" column="121" selection-start-line="322" selection-start-column="121" selection-end-line="322" selection-end-column="121" />
+>>>>>>> 858aa539829f8443f19fb68c111203058b6b7e88
           <folding />
         </state>
       </provider>
