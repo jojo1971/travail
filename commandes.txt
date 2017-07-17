@@ -14,10 +14,72 @@ print
 cls
 choice
 
+net share D:\OO /delete  -->supprimer le partage sur OO
+net share nomDuPartage=D:OO/USERS:5  --> créer un partage sur OO pour 5 utilisatuers
+
 convert X: /fs:ntfs 
+_______________
+POWERSHELL
+$PSVersionTable --> connaitre version PowerShell
+Copier depuis PowerShell : Clic"gauche" pour sélectionnez le texte puis clic "droit" pour copier.
+Coller dans PowerShell :Copier son texte, puis Clic "droit" dans PowerShell pour le coller
+get-module listavailable  -> avoir la liste des modules
+ install-module NTFSSecurity  --> installer module
+ uninstall-module NTFSSecurity
+ get-command -module NTFSSecurity --> voir les commandes exixtantes
+ get-module --> voir les modules existants
+ get-NTFSAccess -path "C:\" 
+ import-module NTFSSecurity
+ set-ExecutionPolicy Unrestricted
+ get-command -module NTFSSecurity
+ get-ntfseffectiveAccess D:\prov\partage
+ get-ntfseffectiveAccess D:\prov\partage\Utilisateurs
+add-ntfsaccess -path 'D:\prov\part' -account 'Tout le monde' -accessrights write
+ add-access -path 'D:\prov\partage' -account 'Utilisateurs' -accessrights all
+ add-NTFSaccess -path 'D:\prov\partage' -account 'Utilisateurs' -accessrights all
+ add-NTFSaccess -path 'D:\prov\partage' -account 'Utilisateurs' -accessrights read
+ add-NTFSaccess -path 'D:\prov\partage' -account 'Utilisateurs' -accessrights write
+ add-NTFSaccess -path 'D:\prov\partage' -account 'Utilisateurs' -accessrights delete
+créer un dossier de partage : 
+# create pointer to class
+$comp=[WMICLASS]"Win32_share"
+# create a new share
+$comp.create("c:\","mynewshare",0,25,"shareName")  ->25 = nbre maxi de connexions
+# see results
+gwmi win32_share 
+
+oubien : 
+ net share myshare=D:\prov\test /remark:"mon share" /users:10 /GRANT:Everyone,FULL
+
+changer les droits sur un dossier : 
+$access=new-object system.security.accesscontrol.filesystemaccessrule("Username","FullControl","ContainerInherit, ObjectInherit", "None", "Allow")
+$path="D:\prov\test"
+$acl=get-acl $path
+$acl.addAccessRule($access)
+set-acl $path $acl
+
+net share "D:\prov\test" /delete   -> supprimer partage sur test
+net view  -> voir les postes connectés
+get-process  --> tous les processus en cours
+
+pour partager dossier pour "Tout le monde" :
+1-new-item D:\prov\test -type directory
+2-add-ntfsaccess -path 'D:\prov\test' -account 'Tout le monde' -accessrights read
+3-net share test3=D:\prov\test /remark:"test333" /users:5 /grant:"Tout le monde",full
+
+ ipconfig /all
+$env:computername  -> nom de l'ordinateur
 ___________
 html :
 div : margin,border, padding,bottom
+____________________
+PHP
+
+ord('a');  -> code ASCII de 'a'
+chr(97); -> le charactère pour le code ASCII '97'
+headers_list ->  renvoi la liste des en-têtes HTTP de la page courante 
+defined('CST') -> teste dans un script si une constante CST existe
+$c = &$a;  -> signifie que la variable a dépend aussi de la variable c
 _______________
 javascript :
 manipulation du html :
@@ -422,5 +484,12 @@ double ma_Valeur ;
 DecimalFormat df = new DecimalFormat("#.##");
 System.out.println(df.format(ma_Valeur));
 -------------------------------
-JOptionPane.showMessageDialog(null, "teste"); --> pour afficher une boite de dialogue
+JOptionPane.showMessageDialog(null, "texte"); --> pour afficher une boite de dialogue
+
+____________________________________
+DIVERS
+(....)  ellipsis : parenthèses en anglais
+[...]  brackets : crochets en anglais
+{....}   braces accolades en anglais
+|   pipe
 
