@@ -239,12 +239,6 @@ iframe => technique pour réaliser un upload.
 callback, windows.top => accéder à la page qui contient l'iframe
 DSL => dynamic script loading
 
-
-
-
-
-
-
 ________________________________
 AJAX :
 XMLHttpRequest
@@ -488,8 +482,9 @@ double ma_Valeur ;
 DecimalFormat df = new DecimalFormat("#.##");
 System.out.println(df.format(ma_Valeur));
 -------------------------------
-<<<<<<< HEAD
 JOptionPane.showMessageDialog(null, "texte"); --> pour afficher une boite de dialogue
+
+boutC.setForeground(Color.RED); -> changer de couleur texte du bouton
 
 ____________________________________
 DIVERS
