@@ -488,11 +488,24 @@ DecimalFormat df = new DecimalFormat("#.##");
 System.out.println(df.format(ma_Valeur));
 -------------------------------
 JOptionPane.showMessageDialog(null, "texte"); --> pour afficher une boite de dialogue
+JTextField lab = new JTextField(20); -> definir la taille d'un textfield : 20
+lab.setHorizontalAlignment(SwingConstants.RIGHT);  -> Aligner le texte à droite du Jtextfield
+
+switch(signe)
+{
+	case("+") : c = a + b;
+	break;
+	case("-") : c = a - b;
+	break;
+	default :	
+	break;
+}
+
 
 ____________________________________
 DIVERS
 (....)  ellipsis : parenthèses en anglais
 [...]  brackets : crochets en anglais
-{....}   braces accolades en anglais
+{....}   braces : accolades en anglais
 |   pipe
 
