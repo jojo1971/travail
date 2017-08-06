@@ -1,5 +1,8 @@
 ﻿commande executer :
 firefox.exe -P  -> pour accéder aux extensions firefox
+
+msinfo32  ->  information système
+msconfig  -> configuration système
 ____
 
 type
