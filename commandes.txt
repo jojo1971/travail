@@ -487,7 +487,7 @@ System.out.println(df.format(ma_Valeur));
 JOptionPane.showMessageDialog(null, "texte"); --> pour afficher une boite de dialogue
 JTextField lab = new JTextField(20); -> definir la taille d'un textfield : 20
 lab.setHorizontalAlignment(SwingConstants.RIGHT);  -> Aligner le texte à droite du Jtextfield
-
+---------------
 switch(signe)
 {
 	case("+") : c = a + b;
@@ -497,7 +497,15 @@ switch(signe)
 	default :	
 	break;
 }
-
+------------------------
+Entrées au clavier et test d'égalité entre deux chaines de caractères :
+	String mot;
+		BufferedReader lettre = new BufferedReader(new InputStreamReader(System.in));
+		
+		mot = lettre.readLine();
+		if(mot.equals("test"))
+		System.out.println(mot);
+-----------------------
 
 ____________________________________
 DIVERS
