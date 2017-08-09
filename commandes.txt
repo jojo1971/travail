@@ -4,7 +4,16 @@ firefox.exe -P  -> pour accéder aux extensions firefox
 msinfo32  ->  information système
 msconfig  -> configuration système
 ____
+EXCEL
 
+ALT puis Entrer pour sauter une ligne dans une cellule
+SI(condition;alors;oubien)
+=char(10)  -> charactère de la touche 10(touche entrer)
+=char(84)  -> touche 84 : lettre T
+taper F2 et Entrer pour valider une cellule
+$B$2 -> pour désigner une cellule sans prendre en compte la ligne ni la colonne
+ABS(B2) -> valeur absolue de la cellule b2
+_________________________
 type
 rd
 cd
