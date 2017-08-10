@@ -13,7 +13,12 @@ SI(condition;alors;oubien)
 taper F2 et Entrer pour valider une cellule
 $B$2 -> pour désigner une cellule sans prendre en compte la ligne ni la colonne
 ABS(B2) -> valeur absolue de la cellule b2
-_________________________
+=VLOOKUP(A2;$A$8:$B$11;2;TRUE)  -> fonction recherche : je recherche le contenu de a2 sur la plage a8:b11 en récupérant la 2e colonne de la plage à partir de la valeur exacte(true).
+=RECHERCHEV(A2;$A$8:$B$11;2;TRUE)  -> idem VLOOKUP
+=RECHERCHEH(A2;$A$8:$B$11;2;FALSE)  -> idem HLOOKUP(Mieux vaut mettre false) 
+
+
+________________________
 type
 rd
 cd
