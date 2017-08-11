@@ -15,7 +15,9 @@ $B$2 -> pour désigner une cellule sans prendre en compte la ligne ni la colonne
 ABS(B2) -> valeur absolue de la cellule b2
 =VLOOKUP(A2;$A$8:$B$11;2;TRUE)  -> fonction recherche : je recherche le contenu de a2 sur la plage a8:b11 en récupérant la 2e colonne de la plage à partir de la valeur exacte(true).
 =RECHERCHEV(A2;$A$8:$B$11;2;TRUE)  -> idem VLOOKUP
-=RECHERCHEH(A2;$A$8:$B$11;2;FALSE)  -> idem HLOOKUP(Mieux vaut mettre false) 
+=RECHERCHEH(A2;$A$8:$B$11;2;FALSE)  -> idem HLOOKUP(Mieux vaut mettre false).
+Menu déroulant : 1-sélectionner la plage.2-Formule->créer à partir de la sélection.3-Donner->Validation de données.4-Choisir list, sélectionner la cellule de destination.5-aller dans sources et taper F3.6-choisir le classeur précédamment créé.
+SOMME.SI.ENS(ensemble à additionner;ensemble condition 1;condition 1, ensemble condition 2;condition 2) : ex:=SUMIFS(H12:H19;F12:F19;"5,50%"). SUMIFS : en anglais.
 
 
 ________________________
