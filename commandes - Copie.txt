@@ -1,7 +1,26 @@
 ﻿commande executer :
 firefox.exe -P  -> pour accéder aux extensions firefox
-____
 
+msinfo32  ->  information système
+msconfig  -> configuration système
+____
+EXCEL
+
+ALT puis Entrer pour sauter une ligne dans une cellule
+SI(condition;alors;oubien)
+=char(10)  -> charactère de la touche 10(touche entrer)
+=char(84)  -> touche 84 : lettre T
+taper F2 et Entrer pour valider une cellule
+$B$2 -> pour désigner une cellule sans prendre en compte la ligne ni la colonne
+ABS(B2) -> valeur absolue de la cellule b2
+=VLOOKUP(A2;$A$8:$B$11;2;TRUE)  -> fonction recherche : je recherche le contenu de a2 sur la plage a8:b11 en récupérant la 2e colonne de la plage à partir de la valeur exacte(true).
+=RECHERCHEV(A2;$A$8:$B$11;2;TRUE)  -> idem VLOOKUP
+=RECHERCHEH(A2;$A$8:$B$11;2;FALSE)  -> idem HLOOKUP(Mieux vaut mettre false).
+Menu déroulant : 1-sélectionner la plage.2-Formule->créer à partir de la sélection.3-Donner->Validation de données.4-Choisir list, sélectionner la cellule de destination.5-aller dans sources et taper F3.6-choisir le classeur précédamment créé.
+SOMME.SI.ENS(ensemble à additionner;ensemble condition 1;condition 1, ensemble condition 2;condition 2) : ex:=SUMIFS(H12:H19;F12:F19;"5,50%"). SUMIFS : en anglais.
+
+
+________________________
 type
 rd
 cd
@@ -239,6 +258,12 @@ iframe => technique pour réaliser un upload.
 callback, windows.top => accéder à la page qui contient l'iframe
 DSL => dynamic script loading
 
+
+
+
+
+
+
 ________________________________
 AJAX :
 XMLHttpRequest
@@ -322,12 +347,12 @@ pour afficher une variqble sans qu'elle soit interprétée par twig (en texte br
 Doctrine = bundle de Symfony 2, c'est un ORM(couche d'abstraction pour le traitement base de données)
 
 créer une entité : php app/console doctrine:generate:entity
-                    The Entity shortcut name: OCPlatformBundle:Advert
-                    New field name (press <return> to stop adding fields): date
-                    Field type [string]: datetime
-                    New field name (press <return> to stop adding fields): title
-                    Field type [string]: string
-                    Field length [255]: 255
+The Entity shortcut name: OCPlatformBundle:Advert
+New field name (press <return> to stop adding fields): date
+Field type [string]: datetime
+New field name (press <return> to stop adding fields): title
+Field type [string]: string
+Field length [255]: 255
 
 slug : modifier un champ par un alias : ex : Le chat mange le souris ! => le-chat-mange-la-souris
      - dans l'entité :    /**
@@ -368,11 +393,7 @@ Pour faire une requete à partir de la console : php app/console doctrine:query:
 
 pour générer setteurs et getteur :php app/console doctrine:generate:entities UtilisateursBundle:Utilisateurs
 
-<<<<<<< HEAD
-générer un formulaire pour une entité = php app/console doctrine:generate:form TutoAnimauxBundle:Animal
-=======
 générer un formulaire = php app/console doctrine:generate:form TutoAnimauxBundle:Animal (pour créer les fichiers ----Type)
->>>>>>> 858aa539829f8443f19fb68c111203058b6b7e88
 mise a jour : compaoser.phar update ou self-update
 pour importer fosuser de git : git clone https://github.com/FriendsOfSymfony/FOSUserBundle.git vendor/bundles/FOS/UserBundle
 créer un bundle : php app/console generate:bundle
@@ -483,31 +504,32 @@ DecimalFormat df = new DecimalFormat("#.##");
 System.out.println(df.format(ma_Valeur));
 -------------------------------
 JOptionPane.showMessageDialog(null, "texte"); --> pour afficher une boite de dialogue
-
-boutC.setForeground(Color.RED); -> changer de couleur texte du bouton
+JTextField lab = new JTextField(20); -> definir la taille d'un textfield : 20
+lab.setHorizontalAlignment(SwingConstants.RIGHT);  -> Aligner le texte à droite du Jtextfield
+---------------
+switch(signe)
+{
+	case("+") : c = a + b;
+	break;
+	case("-") : c = a - b;
+	break;
+	default :	
+	break;
+}
+------------------------
+Entrées au clavier et test d'égalité entre deux chaines de caractères :
+	String mot;
+		BufferedReader lettre = new BufferedReader(new InputStreamReader(System.in));
+		
+		mot = lettre.readLine();
+		if(mot.equals("test"))
+		System.out.println(mot);
+-----------------------
 
 ____________________________________
 DIVERS
 (....)  ellipsis : parenthèses en anglais
 [...]  brackets : crochets en anglais
-{....}   braces accolades en anglais
+{....}   braces : accolades en anglais
 |   pipe
-=======
-JOptionPane.showMessageDialog(null, "teste"); --> pour afficher une boite de dialogue
-Mise en forme JLABEL : 
-  Font police = new Font("Tahoma", Font.BOLD, 16);
->>>>>>> 2fc3c675a2245830232788bf2040ff140c257324
 
-  //On l'applique au JLabel
-
-  label.setFont(police);
-
-  //Changement de la couleur du texte
-
-  label.setForeground(Color.blue);
-
-  //On modifie l'alignement du texte grâce aux attributs statiques
-
-  //de la classe JLabel
-
-  label.setHorizontalAlignment(JLabel.CENTER);
