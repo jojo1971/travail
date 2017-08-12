@@ -21,6 +21,7 @@ SOMME.SI.ENS(ensemble à additionner;ensemble condition 1;condition 1, ensemble 
 ______________________________________
 WORD
 retrait positif 1er ligne  -> mettre le curseur sur le pargraphe concerné puis "Paragraphe"-"Retrait".
+pour supprimer un tableau : sélectionner le tableau avec la croix de déplacement et faire un backspace.
 
 
 ________________________
