@@ -22,6 +22,7 @@ Dessiner un tableau : "Création" -> "Bordures"
 ______________________________________
 WORD
 retrait positif 1er ligne  -> mettre le curseur sur le pargraphe concerné puis "Paragraphe"-"Retrait".
+pour supprimer un tableau : sélectionner le tableau avec la croix de déplacement et faire un backspace.
 
 
 ________________________
