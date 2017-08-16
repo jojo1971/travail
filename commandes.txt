@@ -23,6 +23,15 @@ ______________________________________
 WORD
 retrait positif 1er ligne  -> mettre le curseur sur le pargraphe concerné puis "Paragraphe"-"Retrait".
 pour supprimer un tableau : sélectionner le tableau avec la croix de déplacement et faire un backspace.
+Création d'un sommaire : 
+-écrire le titre puis le paragraphe
+-pour les numéros, allez chiffres et lettres pour définir le 1)
+-créer un style normal
+-clic droit sur le nouveau style et clic sur"Mettre à jour pour corr..." quand le curseur est sur le titre
+-pour le titre de second degré : même démarche mais clic sur la flèche droite pour passer au a)
+-créer un nouveau style2, etc.
+-Attention, tous les styles sont liées au document, donc quand on quitte on perd les styles
+-On peut sauvegarder le sommeire en sélectionnat tout le sommaire, "Référence", "Table de matières", "enregistrer la sélection"
 
 
 ________________________
