@@ -35,7 +35,13 @@ Création d'un sommaire :
 -On peut sauvegarder le sommeire en sélectionnat tout le sommaire, "Référence", "Table de matières", "enregistrer la sélection"
 
 Position entête : pour désancrer l'entête, sélectionner l'image, "Mise en page", "Position", sélection en haut à gauche puis double cliquer sur le petite ancre en haut à gauche de l'image.
-
+_________________________________
+POWERPOINT
+Affichage texte progressivement sur une diapo : 
+-sélectionner le champs
+-Animations
+-Par paragraphe
+-pour l'ordre d'apparition -> volet d'annimation
 
 
 ________________________
