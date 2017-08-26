@@ -19,6 +19,8 @@ ABS(B2) -> valeur absolue de la cellule b2
 Menu déroulant : 1-sélectionner la plage.2-Formule->créer à partir de la sélection.3-Donner->Validation de données.4-Choisir list, sélectionner la cellule de destination.5-aller dans sources et taper F3.6-choisir le classeur précédamment créé.
 SOMME.SI.ENS(ensemble à additionner;ensemble condition 1;condition 1, ensemble condition 2;condition 2) : ex:=SUMIFS(H12:H19;F12:F19;"5,50%"). SUMIFS : en anglais.
 Dessiner un tableau : "Création" -> "Bordures"
+Pour figer une ligne ou un colonne : Affichage, Figer les volets.
+Pour compter le nombre de cellule contenant un mot : =NB.SI(B4:K72;"BTS TC")
 ______________________________________
 WORD
 retrait positif 1er ligne  -> mettre le curseur sur le pargraphe concerné puis "Paragraphe"-"Retrait".
