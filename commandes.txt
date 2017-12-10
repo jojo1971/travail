@@ -3,6 +3,7 @@ firefox.exe -P  -> pour accéder aux extensions firefox
 
 msinfo32  ->  information système
 msconfig  -> configuration système
+
 ____
 EXCEL
 
@@ -21,6 +22,7 @@ SOMME.SI.ENS(ensemble à additionner;ensemble condition 1;condition 1, ensemble 
 Dessiner un tableau : "Création" -> "Bordures"
 Pour figer une ligne ou un colonne : Affichage, Figer les volets.
 Pour compter le nombre de cellule contenant un mot : =NB.SI(B4:K72;"BTS TC")
+Pour centrer un tableau horizontalement et vercalement sur une page : "mise en page", "marge personnalisée", cocher alignement horizontal,...
 ______________________________________
 WORD
 retrait positif 1er ligne  -> mettre le curseur sur le pargraphe concerné puis "Paragraphe"-"Retrait".
@@ -34,14 +36,52 @@ Création d'un sommaire :
 -pour le titre de second degré : même démarche mais clic sur la flèche droite pour passer au a)
 -créer un nouveau style2, etc.
 -Attention, tous les styles sont liées au document, donc quand on quitte on perd les styles
--On peut sauvegarder le sommeire en sélectionnat tout le sommaire, "Référence", "Table de matières", "enregistrer la sélection"
+-On peut sauvegarder le sommaire en sélectionnat tout le sommaire, "Référence", "Table de matières", "enregistrer la sélection"
 
 Position entête : pour désancrer l'entête, sélectionner l'image, "Mise en page", "Position", sélection en haut à gauche puis double cliquer sur le petite ancre en haut à gauche de l'image.
+Insérer une note en bas de page : cliquer à l'endroit souhaité puis aller sur "Référence" et "Insérer une note en bas de page"
+Ligne solidaire, paragraphe solidaire : clic droit sur la partie concernée, "Paragraphe" puis "Enchainements".
+
+6 pt = 2 millimètres (6 points valent 2 mm)
+
+numero de page à partir de la deuxieme page : 
+-selectionner la page où commence la numérotation
+-"Disposition","Saut de page","page suivante"
+-double clic sur entête de la même page -> "Lier au précédent"
+-"Insertion", "Numéro de page", "Format", commencer à partir de 1
+-double clic sur entête, Cocher "Première page diférente"
+
+QuickPart : pour créer un élément (texte, image,...) qu'on peut reproduire où on veut :
+- sélectionner le texte
+- "Insertion", "QuickPart","Enregistrer la sélection dans la galerie des composants QuickPart..."
+- Donner un nom
+Pour que QuickPart se modofie partout où il a été inséré il faut créer un Champs :
+- "QuickPart", "Champs", "inserttion auto", le nom du bloc QuickPart anciennement créé
+- pour modifier, reprendre le bloc, le modifier et le nommer avec le même nom que le bloc de départ
+- Mettre à jour tous les bloc : clic droit sur un bloc et "Mettre à jour tous les blocs" ou tous sélectionner et F9.
+
+Probleme numéro de page indisponible : 
+Remplacer C:\Users\[Utilisateur]\AppData\Roaming\Microsoft\Document Building Blocks\1036\Building Blocks.dotx  PAR  C:\Program Files (x86)\Microsoft Office\Office14\Document Parts\1036\14\ Building Blocks.dotx
+
+Commencer la numérotation à partir de la troisième page : 
+- Se placer à la fin d'une section pour créer une "section-page suivante"
+- Entrer dans l'entête en double cliquant dessus
+- Dans l'onglet "Création" cliquer sur "Lier au précédent" pour supprimer cette liaison
+- "Insertion", "Numéro de page", "Format du numéro", commen à 1
+
+Fusionner des documents word (permet de garder le style) : 
+- se placer à l'endroit d'insertion du docu d'origine
+- "Inserer" -> "Objet" -> "Texte d'un fichier", sélectionner un fichier pour l'insérer en entier
+- Pour l'insérer partiellement : aller d'abord sur le fichier de recup pour créer un signet du paragraphe souhaité
+- quitter en sauvegardant
+- faire "Inserer" -> "Objet" -> "Texte d'un fichier" dans le premier fichier puis sélectionner "Plage" dans la fenêtre en indiquant le nom du signet (ne pas oublier l'extension pour le nom du fichier) 
+
+Protection PDF : utiliser soit PDF creator free (win10) soit Adobe Acrobate XI pro
 _________________________________
 POWERPOINT
 Affichage texte progressivement sur une diapo : 
 -sélectionner le champs
--Animations
+-Animations ou animation personnalisée
 -Par paragraphe
 -pour l'ordre d'apparition -> volet d'annimation
 
@@ -558,4 +598,6 @@ DIVERS
 [...]  brackets : crochets en anglais
 {....}   braces : accolades en anglais
 |   pipe
+~ tilde
+& esperluette ou perluette, le "et" commerciale
 
